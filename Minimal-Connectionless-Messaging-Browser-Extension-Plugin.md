@@ -14,9 +14,12 @@ A Minimal example of a Connectionless Messaging Browser Extension Plugin.
 ### Manifest.json
 
 
-[Firefox Manifest.json](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json)
-[Chrome Manifest.json](https://developer.chrome.com/docs/extensions/reference/manifest)
-[Edge Manifest.json](https://learn.microsoft.com/en-us/microsoft-edge/extensions/getting-started/manifest-format?tabs=v2)
+[Firefox Manifest.json documentation](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json)
+
+[Chrome Manifest.json documentation](https://developer.chrome.com/docs/extensions/reference/manifest)
+
+[Edge Manifest.json documentation](https://learn.microsoft.com/en-us/microsoft-edge/extensions/getting-started/manifest-format?tabs=v2)
+
 
 Every Browser Extension Plugin (BEP) needs a manifest.json file. This file contains metadata providing information about your extension like name, version and controls the functionality you browser can use with the supplied javascript and html files.
 
