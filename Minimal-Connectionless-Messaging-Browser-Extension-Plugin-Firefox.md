@@ -99,7 +99,7 @@ The ```${...}``` syntax is how expressions are embedded, evaluated and expanded 
 .postMessage()
 ```
 
-Is a method that safely sends Cross Origin (CORS stands for Cross-Origin Resource Sharing) communication between window objects. 
+Is a method that safely sends Cross Origin communication between window objects and thus bypasses the CORS (Cross-Origin Resource Sharing) which is enforced by browsers to protect users from unauthorized cross-origin requests. 
 
 ```
 browser.webNavigation.onBeforeNavigate.addListener((details) => 
