@@ -54,6 +54,8 @@ browser.webNavigation
 ```
 Is a WebExtension API that lets the script monitor and respond to [webNavigation events](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation). Its the Browser level navigation UI, unlike [webRequest](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest) which are event listeners for the lifecycle of events making an HTTP request, which includes websocket requests on ws:// and wss://. 
 
+This webNavigation API needs to have the "webNavigation" permission in the manifest.json file.
+
 
 The lifecycle of webNavigation events in order....
 ```
@@ -78,6 +80,26 @@ addListener(listener)
 removeListener(listener)
 hasListener(listener)
 ```
+```
+details
+```
+```details``` is an object with different properties that correspond to the webNavigation method being used.
+[onCreatedNavigationTarget details object](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCreatedNavigationTarget#details)
+
+[onBeforeNavigate details object](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onBeforeNavigate#details)
+
+[onCommitted details object](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCommitted#details)
+
+[onDOMContentLoaded details object](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onDOMContentLoaded#details)
+
+[onHistoryStateUpdated details object](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onHistoryStateUpdated#details)
+
+[onReferenceFragmentUpdated details object](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onReferenceFragmentUpdated#details)
+
+[onCompleted details object](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCompleted#details)
+
+[onErrorOccurred details object](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onErrorOccurred#details)
+
 
 ```
 const MyBlockScopedInitialisedVariable = Object/Array/Function/Property/Value/Method
