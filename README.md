@@ -42,7 +42,7 @@ Using StdIn StdOut Anonymous pipes can eliminate the Console window flicker prob
 
 ### Browser Extension Plugin File Overview
 
-[Minimal Connectionless Messaging Browser Extension Plugin](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md)
+[Firefox Minimal Connectionless Messaging Browser Extension Plugin](Minimal-Connectionless-Messaging-Browser-Extension-Plugin-Firefox.md)
 
 [Minimal Persistent Connection Messaging Browser Extension Plugin](Minimal-Persistent-Connection-Messaging-Browser-Extension-Plugin.md)
 
