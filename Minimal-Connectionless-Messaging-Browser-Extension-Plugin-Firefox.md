@@ -66,7 +66,7 @@ browser.webNavigation.onReferenceFragmentUpdated ! Fired if the fragment identif
 browser.webNavigation.onCompleted
 ```
 
-Can be fired at any time during the webNavigation lifecycle of events. Its the Browser level navigation UI, unlike [webRequest](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest) which are event listeners for the lifecycle of events making an HTTP request, which includes websocket requests on ws:// and wss://. 
+```onErrorOccurred``` can be fired at any time during the webNavigation lifecycle of events. Its the Browser level navigation UI, unlike [webRequest](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest) which are event listeners for the lifecycle of events making an HTTP request, which includes websocket requests on ws:// and wss://. 
 
 ```
 browser.webNavigation.onErrorOccurred
