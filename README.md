@@ -30,10 +30,17 @@ The Console window which is hidden immediately after creation can cause a flicke
 Using StdIn StdOut Anonymous pipes can eliminate the Console window flicker problem.
 
 
+### Browser Specific Extension Plugin
+
 [FireFox Add Extension Plugin](Add-Extension-Firefox.md)
+
 [Chrome Add Extension Plugin](Add-Extension-Chrome.md)
+
 [Edge Add Extension Plugin](Add-Extension-Edge.md)
 
+
+
+### Browser Extension Plugin File Overview
 
 [Minimal Connectionless Messaging Browser Extension Plugin](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md)
 
