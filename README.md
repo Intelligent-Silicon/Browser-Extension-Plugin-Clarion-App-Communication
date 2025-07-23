@@ -1,4 +1,4 @@
-# Browser Extension Plugin Clarion App Communication
+# Browser Extension Plugin for Clarion App Communication
 
 Essentially two ways for a Browser Extension Plugin (BEP) to communicate with a Clarion app.
 
