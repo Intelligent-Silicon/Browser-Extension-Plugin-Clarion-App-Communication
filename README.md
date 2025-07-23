@@ -1,10 +1,10 @@
 # Browser Extension Plugin for Clarion App Communication
 
-Essentially two ways for a Browser Extension Plugin (BEP) to communicate with a Clarion app.
+Essentially two ways for a Browser Extension Plugin (BEP) to communicate with a Clarion app:
 
-Connectionless Messaging
+[Connectionless Messaging](README.md#connectionless-messaging)
 
-Persistent Connection Messaging
+[Persistent Connection Messaging](README.md#persistent-connection-messaging)
 
 
 ### Connectionless Messaging
