@@ -27,7 +27,7 @@ eg ```c:\MyBrowserExtensionForClarion\v1\```
 
 Every Browser Extension Plugin (BEP) needs a manifest.json file. This file contains metadata providing information about your extension like name, version and controls the functionality you browser can use with the supplied javascript (and html files).
 
-Minimal Required Information:
+Minimal Required Information for a manifest.json file:
 
 | Key | Value | Description |
 | --- | --- | --- | 
@@ -35,7 +35,7 @@ Minimal Required Information:
 | [name](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/name) | "My Minimal Browser Extension Plugin" | This is used to identify the extension in the browser's user interface and on sites like https://addons.mozilla.org, https://chromewebstore.google.com & https://microsoftedge.microsoft.com/addons |
 | [version](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/version) | n.n.n.n | The version string consists of 1 to 4 numbers separated by dots, for example, 1.2.3.4. Non-zero numbers must not include a leading zero. For example, 2.01 is not allowed; however, 0.2, 2.0.1, and 2.10 are allowed. |
 
-Additional Required Information:
+Additional Required Information for a Clarion app to use NativeCommunication:
 
 | Key | Value | Description |
 | --- | --- | --- | 
