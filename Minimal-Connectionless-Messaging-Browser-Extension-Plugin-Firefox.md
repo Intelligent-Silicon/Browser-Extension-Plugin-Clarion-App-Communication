@@ -52,7 +52,7 @@ Additional Required Information for a Clarion app to use NativeCommunication:
 ```
 browser.webNavigation
 ```
-Is a WebExtension API that lets the script monitor and respond to [webNavigation events](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation)
+Is a WebExtension API that lets the script monitor and respond to [webNavigation events](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation). Its the Browser level navigation UI, unlike [webRequest](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest) which are event listeners for the lifecycle of events making an HTTP request, which includes websocket requests on ws:// and wss://. 
 
 
 The lifecycle of webNavigation events in order....
@@ -66,7 +66,7 @@ browser.webNavigation.onReferenceFragmentUpdated ! Fired if the fragment identif
 browser.webNavigation.onCompleted
 ```
 
-```onErrorOccurred``` can be fired at any time during the webNavigation lifecycle of events. Its the Browser level navigation UI, unlike [webRequest](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest) which are event listeners for the lifecycle of events making an HTTP request, which includes websocket requests on ws:// and wss://. 
+```onErrorOccurred``` can be fired at any time during the webNavigation lifecycle of events. 
 
 ```
 browser.webNavigation.onErrorOccurred
