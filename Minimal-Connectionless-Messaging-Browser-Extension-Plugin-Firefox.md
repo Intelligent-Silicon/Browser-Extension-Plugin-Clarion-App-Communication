@@ -132,3 +132,6 @@ browser.webNavigation.onBeforeNavigate.addListener((details) =>
     MyBlockScopedInitialisedVariable.postMessage(MyMessageSentToClarionApp); // if app expects raw string which is serialized using JSON, UTF-8 encoded and is preceded with an unsigned 32-bit value containing the message length in native byte order.
     }
 );
+```
+
+[Complete Background.js file for download](background.js)
