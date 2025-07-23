@@ -1,4 +1,4 @@
-console.log("✅ background loaded!");
+console.log("The background.js file has loaded!");
 
 browser.webNavigation.onCreatedNavigationTarget((details) => 
 {
