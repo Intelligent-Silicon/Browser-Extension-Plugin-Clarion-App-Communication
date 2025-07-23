@@ -4,7 +4,7 @@ A Minimal example of a Connectionless Messaging Browser Extension Plugin.
 
 ### Browser Extension Plugin Files
 
-Store the files listed below in a folder for testing purposes. Once uploaded to a Browser's Addon store, these files are managed and stored by the Browser automatically.
+Store the files listed below in a folder for testing purposes. Once uploaded to a Browser's Addon store, these files are managed and stored by the Browser automatically. This files are explicitly required for the Browser Extension Plugin addon. 
 
 eg ```c:\MyBrowserExtensionForClarion\v1\```
 
@@ -13,7 +13,7 @@ eg ```c:\MyBrowserExtensionForClarion\v1\```
         ├── background.js
         ├── content_script.js
         ├── Clarion_AppName.manifest
-        
+        ├── Clarion_AppName.exe
 
 ### Manifest.json
 
@@ -104,7 +104,7 @@ Is a method that safely sends Cross Origin communication between window objects 
 ```
 browser.webNavigation.onBeforeNavigate.addListener((details) => 
     {
-    const MyBlockScopedInitialisedVariable = browser.runtime.connectNative("Clarion_AppName"); // "Name" must match "Clarion_AppName.manifest"
+    const MyBlockScopedInitialisedVariable = browser.runtime.connectNative("Clarion_AppName"); // "Clarion_AppName" must match "Clarion_AppName.manifest" and "Clarion_Appname.exe" found in the "c:\MyBrowserExtensionForClarion\v1\" folder.
     const message = `onBeforeNavigate ${details.tabId},${details.url},${details.processId},${details.frameId},,${details.parentframeId}, ${details.timeStamp}`;
     MyBlockScopedInitialisedVariable.postMessage(message); // if app expects raw string
     }
