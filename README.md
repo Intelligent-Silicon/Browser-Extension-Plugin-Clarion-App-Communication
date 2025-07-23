@@ -32,11 +32,11 @@ Using StdIn StdOut Anonymous pipes can eliminate the Console window flicker prob
 
 ### Browser Specific Extension Plugin
 
-[FireFox Add Extension Plugin](Add-Extension-Firefox.md)
+[FireFox Addon Extension Plugin](Add-Extension-Firefox.md)
 
-[Chrome Add Extension Plugin](Add-Extension-Chrome.md)
+[Chrome Addon Extension Plugin](Add-Extension-Chrome.md)
 
-[Edge Add Extension Plugin](Add-Extension-Edge.md)
+[Edge Addon Extension Plugin](Add-Extension-Edge.md)
 
 
 
