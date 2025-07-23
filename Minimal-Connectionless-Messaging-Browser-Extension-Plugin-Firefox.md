@@ -84,6 +84,7 @@ hasListener(listener)
 details
 ```
 ```details``` is an object with different properties that correspond to the webNavigation method being used.
+
 [onCreatedNavigationTarget details object](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCreatedNavigationTarget#details)
 
 [onBeforeNavigate details object](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onBeforeNavigate#details)
