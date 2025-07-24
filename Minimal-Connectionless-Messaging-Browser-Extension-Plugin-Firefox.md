@@ -67,7 +67,7 @@ browser.webNavigation.onHistoryStateUpdated ! Fired when the page used the histo
 browser.webNavigation.onReferenceFragmentUpdated ! Fired if the fragment identifier for a page is changed. For example, if a page implements a table of contents using fragments, and the user clicks an entry in the table of contents, this event fires.
 browser.webNavigation.onCompleted ! Fired when a document, including the resources it refers to, is completely loaded and initialized.
 
-browser.webNavigation.onErrorOccurred ! Fired at any time during the webNavigation lifecycle of events.
+browser.webNavigation.onErrorOccurred ! Fired at any time during the webNavigation lifecycle of events when an error occurs.
 ```
 
 Functions which can be added to the above webNavigation events.
