@@ -149,7 +149,7 @@ browser.webNavigation.onBeforeNavigate.addListener((details) =>
 [Complete Firefox Background.js file for download](Firefox/background.js)
 
 ### content_script.js
-
+A [content script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#connection-based_messaging) can be part of your Browser Extension Plugin that runs in the context of a web page where it can read and modify page content using the standard Web APIs. Content scripts are similar to website/webpage scripts loaded using the <script> element, but require host permissions to access website/webpage content.
 ```
 browser.runtime
 ```
