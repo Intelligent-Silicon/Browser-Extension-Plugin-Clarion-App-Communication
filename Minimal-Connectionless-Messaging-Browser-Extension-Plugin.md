@@ -55,6 +55,7 @@ Additional Required Information for a Clarion app to use NativeCommunication aka
 [Complete Firefox manifest.json file for download](Firefox/manifest.json)
 
 ### background.js
+A [Background Script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts) lets you monitor and respond to events in the Browser like navigating to a web page, modifying a bookmark or opening a new tab.
 
 ```
 browser.webNavigation
