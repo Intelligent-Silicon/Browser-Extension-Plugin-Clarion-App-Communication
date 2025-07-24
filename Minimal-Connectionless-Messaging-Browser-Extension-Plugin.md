@@ -55,7 +55,7 @@ Additional Required Information for a Clarion app to use NativeCommunication aka
 [Complete Firefox manifest.json file for download](Firefox/manifest.json)
 
 ### background.js
-A [Background Script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts) lets you monitor and respond to events in the Browser like navigating to a web page, modifying a bookmark or opening a new tab.
+A [Background Script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts) lets you monitor and respond to events in the context of the Browser using Web Extension API's like navigating to a web page, modifying a bookmark or opening a new tab. It requires permissions to be set in the ```manifest.json``` to access Browser events.
 
 ```
 browser.webNavigation
@@ -150,11 +150,12 @@ browser.webNavigation.onBeforeNavigate.addListener((details) =>
 [Complete Firefox Background.js file for download](Firefox/background.js)
 
 ### content_script.js
-A [content script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#connection-based_messaging) can be part of your Browser Extension Plugin that runs in the context of a web page where it can read and modify page content using the standard Web APIs. Content scripts are similar to website/webpage scripts loaded using the <script> element, but require host permissions to access website/webpage content.
+A [content script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#connection-based_messaging) lets you monitor and respond to events in the context of a web page using the Web Extension APIs. Content scripts are similar to website/webpage scripts loaded using the <script> element, but require permissions to be set in the ```manifest.json``` file to access website/webpage content.
+
 ```
 browser.runtime
 ```
-```browser.runtime``` provides information about your extension and the environment it's running on, messaging APIs enabling you to communicate between different parts of your extension, other extensions and native applications.
+```browser.runtime``` provides information about your extension and the environment it's running on. Messaging APIs enabling you to communicate between different parts of your extension, other extensions and native applications.
 
 ```
 .onMessage
