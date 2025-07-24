@@ -52,7 +52,7 @@ Additional Required Information for a Clarion app to use NativeCommunication aka
 | Firefox Only [browser_specific_settings](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/browser_specific_settings) | guid:{0339088b-ba1a-44dd-baee-da8de84e222d} or name@domainname | must either match the pattern ```/^\{[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\}$/i``` or ```/^[a-z0-9-._]*@[a-z0-9-._]+$/i```. |
 | Firefox Only [applications](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/browser_specific_settings) | guid:{0339088b-ba1a-44dd-baee-da8de84e222d} or name@domainname | "applications" is now deprecated and replaced by "browser_specific_settings" shown above. |
 
-[Complete Firefox manifest.json file for download](\Firefox\manifest.json)
+[Complete Firefox manifest.json file for download](Firefox/manifest.json)
 
 ### background.js
 
@@ -147,4 +147,4 @@ browser.webNavigation.onBeforeNavigate.addListener((details) =>
 );
 ```
 
-[Complete Background.js file for download](\Firefox\background.js)
+[Complete Background.js file for download](Firefox/background.js)
