@@ -203,7 +203,8 @@ Javascript example of how ```message``` could be setup, its purely upto the deve
 // Sender
 browser.runtime.sendMessage({
   type: "ping",
-  data: "Hello from content script"
+  data: "Hello from content script",
+  aNotVeryObfuscatedProperty: "This is definately not obfuscated!",
 });
 
 // Listener
@@ -211,6 +212,7 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   console.log("Received message:", message);
   console.log("Type:", message.type);   // "ping"
   console.log("Data:", message.data);   // "Hello from content script"
+  console.log("aNotVeryObfuscatedProperty:", message.aNotVeryObfuscatedProperty);   // "This is definately not obfuscated!"
 });
 ```
 
