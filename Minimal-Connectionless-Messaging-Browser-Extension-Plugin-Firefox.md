@@ -4,7 +4,7 @@ A Minimal example of a Connectionless Messaging Browser Extension Plugin.
 
 ### Browser Extension Plugin Files
 
-Store the files listed below in a folder for testing purposes. Once uploaded to a Browser's Addon store, these files are managed and stored by the Browser automatically. This files are explicitly required for the Browser Extension Plugin addon. 
+Store the files listed below in a folder for testing purposes. Once uploaded to a Browser's Addon store, these files are managed and stored by the Browser automatically. These files are explicitly required for the Browser Extension Plugin addon. 
 
 eg ```c:\MyBrowserExtensionForClarion\v1\```
 
