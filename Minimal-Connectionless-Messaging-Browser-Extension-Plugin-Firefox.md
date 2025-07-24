@@ -17,7 +17,7 @@ eg ```c:\MyBrowserExtensionUsingClarion\v1\```
 
 To load the Browser Extension Plugin for testing purposes.
 ``` 
-Type 'about:debugging' into Omnibox (address box) -> This Firefox -> Load Temporary Add-on... -> Navigate to ```c:\MyBrowserExtensionUsingClarion\v1\``` and select ```manifest.json```.
+Type 'about:debugging' into Omnibox (address box) -> Click 'This Firefox' -> Click 'Load Temporary Add-on...' -> Navigate to 'C:\MyBrowserExtensionUsingClarion\v1\' and select 'manifest.json'.
 ```
 
 
