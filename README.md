@@ -27,7 +27,7 @@ The Console window which is hidden immediately after creation can cause a flicke
 
 Using StdIn StdOut Anonymous pipes can eliminate the Console window flicker problem.
 
-Can also be further extended by being a combination of a multiple optimised lightweight Proxy handcoded projects to each Browser instance for every User logged on to the machine which in turn communicates with a single Clarion "Master Control Program" app, which can be a Service, for the duration of the User's desktop session or machine session. Each Proxy interface between the Browser and "Master Control Program" will create the flicker when it hides the Console window.
+Can also be further extended by being a combination of a multiple optimised lightweight Proxy handcoded project instances to each Browser instance for every User logged on to the machine which in turn communicates with a single Clarion "Master Control Program" app, which can be a Service, for the duration of the User's desktop session or machine session. Each Proxy interface between the Browser and "Master Control Program" will create the flicker when it hides the Console window but only once when the Browser instance is started.
 
 
 ### Browser Specific Extension Plugin
