@@ -15,6 +15,12 @@ eg ```c:\MyBrowserExtensionForClarion\v1\```
         ├── Clarion_AppName.manifest
         ├── Clarion_AppName.exe
 
+To load the Browser Extension Plugin for testing purposes.
+``` 
+about:debugging -> This Firefox -> Load Temporary Add-on... -> Navigate to ```c:\MyBrowserExtensionForClarion\v1\``` and select ```manifest.json```.
+```
+
+
 ### Manifest.json
 
 
