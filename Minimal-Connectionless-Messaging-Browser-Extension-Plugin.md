@@ -15,6 +15,7 @@ eg ```c:\MyBrowserExtensionUsingClarion\v1\```
         ├── Clarion_AppName.manifest
         ├── Clarion_AppName.exe
 
+
 To load the Browser Extension Plugin for testing purposes.
 ``` 
 Type 'about:debugging' into Omnibox (address box) -> Click 'This Firefox' -> Click 'Load Temporary Add-on...' -> Navigate to 'C:\MyBrowserExtensionUsingClarion\v1\' and select 'manifest.json'.
@@ -163,11 +164,11 @@ browser.runtime
 ```onMessage``` is an event for listening to the Payload Object sent using [runtime.sendMessage()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendMessage) or [tabs.sendMessage()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/sendMessage) from another part of (your) extension(s) or native application. eg listening for messages from a ```background.js``` and vice versa, or an [options page or popup](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Anatomy_of_a_WebExtension#sidebars_popups_and_options_pages).
 
 
-The Structure or Properties of ```message``` depends entirely on what the sender includes. There is no fixed schema.
+The Structure or Properties of ```message``` depends entirely on what the sender includes. There is no fixed schema. x1
 
-The Structure or Properties of ```message``` depends entirely on what the sender includes. There is no fixed schema.
+The Structure or Properties of ```message``` depends entirely on what the sender includes. There is no fixed schema. x2 
 
-The Structure or Properties of ```message``` depends entirely on what the sender includes. There is no fixed schema.
+The Structure or Properties of ```message``` depends entirely on what the sender includes. There is no fixed schema. x3
 
 The properties sent from different Methods that send to ```.onMessage```.
 
@@ -488,4 +489,12 @@ Loc:Buffer_Ansi_Read_Size   Long
     IF ErrorCode()
         Return
     End   
+```
+
+
+### Windows Registry
+
+Add an entry to the Windows Registry which is
+```
+PS C:\WINDOWS\system32> REG ADD "HKCU\Software\Mozilla\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f
 ```
