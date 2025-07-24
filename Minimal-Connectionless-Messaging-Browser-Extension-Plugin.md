@@ -4,7 +4,7 @@ A Minimal example of a Connectionless Messaging Browser Extension Plugin.
 
 ### Browser Extension Plugin Files
 
-Store the files listed below in a folder for testing purposes. Once uploaded to a Browser's Addon store, these files are managed and stored by the Browser automatically. These files are explicitly required for the Browser Extension Plugin addon. 
+Store the files listed below in a folder for testing purposes. Once uploaded to a Browser's Addon store, these files are managed and stored by the Browser automatically. These files are explicitly required for the Browser Extension Plugin addon to work. 
 
 eg ```c:\MyBrowserExtensionUsingClarion\v1\```
 
@@ -55,7 +55,7 @@ Additional Required Information for a Clarion app to use NativeCommunication aka
 [Complete Firefox manifest.json file for download](Firefox/manifest.json)
 
 ### background.js
-A [Background Script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts) lets you monitor and respond to events in the context of the Browser using Web Extension API's like navigating to a web page, modifying a bookmark or opening a new tab. It requires permissions to be set in the ```manifest.json``` to access Browser events.
+A [Background Script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts) lets you monitor and respond to events in the context of the Browser using the Web Extension API's like navigating to a web page, modifying a bookmark or opening a new tab. It requires permissions to be set in the ```manifest.json``` file to access Browser events.
 
 ```
 browser.webNavigation
@@ -160,8 +160,50 @@ browser.runtime
 ```
 .onMessage
 ```
-```onMessage``` is an event for listening to messages from another part of (your) extension(s) or native application. eg listening for messages from a ```background.js``` and vice versa, or an [options page or popup](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Anatomy_of_a_WebExtension#sidebars_popups_and_options_pages).
-A more robust way to send messages between background scripts and content scripts is to use [connection-based messaging](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#connection-based_messaging). 
+```onMessage``` is an event for listening to the Payload Object sent using [runtime.sendMessage()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendMessage) from or [tabs.sendMessage()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/sendMessage) from another part of (your) extension(s) or native application. eg listening for messages from a ```background.js``` and vice versa, or an [options page or popup](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Anatomy_of_a_WebExtension#sidebars_popups_and_options_pages).
+
+
+The structure or properties of ```message``` depends entirely on what the sender includes. There is no fixed schema.
+
+The properties sent from different Methods that send to ```.onMessage```.
+
+[runtime.sendMessage()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendMessage)
+| Parameter | Data Type | Notes |
+| --- | --- | --- |
+| extensionId | String | If extensionId is omitted, the message is sent to your extension. The ID of the extension to send the message to. Include this to send the message to a different extension. |
+| message | Any | An object that can be structured clone serialized |
+| options | Object | |
+| includeTlsChannelId | Boolean | The TLS channel ID passed into runtime.onMessageExternal for processes that are listening for the connection event. |
+
+[tabs.sendMessage()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/sendMessage)
+| Parameter | Data Type | Notes |
+| --- | --- | --- |
+| tabId | Integer | ID of the tab whose content scripts we want to send a message to. |
+| message | Any | An object that can be serialized |
+| options | Object | |
+| frameId | Integer | Sends the message to a specific frame identified by frameId instead of all frames in the tab. Whether the content script is executed in all frames depends on the all_frames setting in the content_scripts section of manifest.json | 
+
+
+Commonly used properties of ```message``` found across other extensions and websites, but not an exhaustive list as any developer can make up their own including [obfuscated properties](https://en.wikipedia.org/wiki/Obfuscation_(software)).
+
+| Property | Notes |
+| --- | --- |
+| type | Identifies the kind of message (e.g. "ping", "getData"). |
+| data | Contains the actual payload (string, object, etc.) |
+| action | Alternative to type, used to describe intent. |
+| url | URL being referenced or acted upon |
+| content | Arbitrary content passed from sender | 
+
+
+```
+if (message.type === "showPopup") { alert(`User typed or reloaded URL:\n${message.url}\n(Transition: ${message.transitionType})`) }
+```
+  
+Avoid creating multiple ```onMessage()``` listeners for the same type of message ```if (message.type === "showPopup")``` because the order in which multiple listeners fire is strangely not guaranteed!!!
+
+So a better way to send messages between background scripts and content scripts is to use [connection-based messaging](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#connection-based_messaging). 
+
+[Complete Firefox content_script.js file for download](Firefox/content_script.js)
 
 
 ### Clarion_AppName.manifest
@@ -176,7 +218,7 @@ The manifest file provides additional information controlling how the ClaAppName
 | [Description](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String | Description of the native application. |
 | [Path](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String | Path to the native application, relative to the ```ClaAppName.manifest``` file. |
 | [Type](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String | Takes the value "stdio" only, which indicates that messages are received by the Clarion app using [Console window](https://learn.microsoft.com/en-us/windows/console/consoles) or [Anonymous Pipes](https://learn.microsoft.com/en-us/windows/win32/procthread/creating-a-child-process-with-redirected-input-and-output) standard input (stdin) and sent using standard output (stdout). |
-| [allowed_extensions](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String Array | An array of Browser Extensions [add-on ID's](https://extensionworkshop.com/documentation/develop/extensions-and-the-add-on-id/) defined in ```browser_specific_settings``` in the ```manifest.json``` for the Browser Extension Plugin. |
+| [allowed_extensions](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String Array | An array of Browser Extension [add-on ID's](https://extensionworkshop.com/documentation/develop/extensions-and-the-add-on-id/) defined in ```browser_specific_settings``` in the ```manifest.json``` for the Browser Extension Plugin. |
 
 
-
+[Complete Firefox ClaAppName.manifest file for download](Firefox/ClaAppName.manifest)
