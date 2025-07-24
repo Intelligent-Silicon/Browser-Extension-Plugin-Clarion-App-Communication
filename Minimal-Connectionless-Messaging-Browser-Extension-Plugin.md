@@ -150,7 +150,7 @@ browser.webNavigation.onBeforeNavigate.addListener((details) =>
 [Complete Firefox Background.js file for download](Firefox/background.js)
 
 ### content_script.js
-A [content script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#connection-based_messaging) lets you monitor and respond to events in the context of a web page using the Web Extension APIs. Content scripts are similar to website/webpage scripts loaded using the <script> element, but require permissions to be set in the ```manifest.json``` file to access website/webpage content.
+A [content script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#connection-based_messaging) lets you monitor and respond to events in the context of a web page using the Web Extension APIs. Content scripts are similar to website/webpage scripts loaded using the <script> element, but require permissions to be set in the ```manifest.json``` file to access the website/webpage content.
 
 ```
 browser.runtime
@@ -160,10 +160,10 @@ browser.runtime
 ```
 .onMessage
 ```
-```onMessage``` is an event for listening to the Payload Object sent using [runtime.sendMessage()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendMessage) from or [tabs.sendMessage()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/sendMessage) from another part of (your) extension(s) or native application. eg listening for messages from a ```background.js``` and vice versa, or an [options page or popup](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Anatomy_of_a_WebExtension#sidebars_popups_and_options_pages).
+```onMessage``` is an event for listening to the Payload Object sent using [runtime.sendMessage()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendMessage) or [tabs.sendMessage()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/sendMessage) from another part of (your) extension(s) or native application. eg listening for messages from a ```background.js``` and vice versa, or an [options page or popup](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Anatomy_of_a_WebExtension#sidebars_popups_and_options_pages).
 
 
-The structure or properties of ```message``` depends entirely on what the sender includes. There is no fixed schema.
+The Structure or Properties of ```message``` depends entirely on what the sender includes. There is no fixed schema.
 
 The properties sent from different Methods that send to ```.onMessage```.
 
