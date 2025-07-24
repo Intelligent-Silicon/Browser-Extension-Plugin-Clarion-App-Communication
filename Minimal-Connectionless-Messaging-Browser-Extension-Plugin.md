@@ -56,6 +56,10 @@ Additional Required Information for a Clarion app to use NativeCommunication aka
 
 ### background.js
 
+```
+browser.webNavigation
+```
+
 ```browser.webNavigation``` is a WebExtension API that lets the script monitor and respond to [webNavigation events](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation). Its the Browser level navigation UI, unlike [webRequest](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest) which are event listeners for the lifecycle of events making an HTTP request, which includes websocket requests on ws:// and wss://. 
 
 This webNavigation API needs to have the "webNavigation" permission in the manifest.json file.
@@ -126,6 +130,9 @@ const Message = `text ${details.tabID}`
 ```
 The ```${...}``` syntax is how expressions are embedded, evaluated and expanded to a value inside a template literal, which is defined using back ticks. This can help provide "debugging" insight and control into the values of variables and properties which can be passed to the nativeCommunication linked Clarion app, instead of using ```console.log("Text:", variable);``` which displays messages and values in the Webbrowser's F12 console tab, or using the ```alert("Text:" + variable + "more text!");``` popup message box.
 
+```
+.postMessage()
+```
 
 ```postMessage``` is a method that safely sends Cross Origin communication between window objects and thus bypasses the CORS (Cross-Origin Resource Sharing) setting which is enforced by browsers to protect users from unauthorized cross-origin requests. 
 
