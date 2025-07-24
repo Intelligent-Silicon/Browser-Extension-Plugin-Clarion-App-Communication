@@ -72,10 +72,24 @@ browser.webNavigation.onErrorOccurred ! Fired at any time during the webNavigati
 
 Functions which can be added to the above webNavigation events.
 ```
-addListener(listener)
-removeListener(listener)
-hasListener(listener)
+addListener(listener,filter) ! Adds a listener to this event.
+removeListener(listener,filter) ! Stop listening to this event. The listener argument is the listener to remove.
+hasListener(listener,filter) ! Check whether listener is registered for this event. Returns true if it is listening, false otherwise.
 ```
+
+```listener``` is a function you define that receives a ```details``` object when the event fire.
+```filter``` is an object that restricts the listener to specific URLs or patterns. eg defined before the WebNavigation event listener, this will trigger only when pages from 'example.com' or domains starting with 'developer' match the webNavigation event function listener.
+
+```
+const filter = {
+  url: [
+    { hostContains: "example.com" },
+    { hostPrefix: "developer" }
+  ]
+};
+```
+
+
 ```
 details
 ```
