@@ -147,3 +147,23 @@ browser.webNavigation.onBeforeNavigate.addListener((details) =>
 ```
 
 [Complete Firefox Background.js file for download](Firefox/background.js)
+
+### content_script.js
+
+
+### Clarion_AppName.manifest
+
+This is whats called an [App manifest file](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_messaging#app_manifest). It needs to be installed alongside the Clarion app exe and match the name of the exe. eg ```ClaAppName.manifest``` must match ```ClaAppName.exe```.
+The manifest file provides additional information controlling how the ClaAppName.exe communicates with the Browser.
+
+
+| Element | Value | Description |
+| --- | --- | --- |
+| [Name](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String | Name of the native application ClaAppName.exe which must match the name passed into runtime.connectNative() or runtime.sendNativeMessage() by the extension. |
+| [Description](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String | Description of the native application. |
+| [Path](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String | Path to the native application, relative to the ```ClaAppName.manifest``` file. |
+| [Type](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String | Takes the value "stdio" only, which indicates that messages are received by the Clarion app using [Console window](https://learn.microsoft.com/en-us/windows/console/consoles) or [Anonymous Pipes](https://learn.microsoft.com/en-us/windows/win32/procthread/creating-a-child-process-with-redirected-input-and-output) standard input (stdin) and sent using standard output (stdout). |
+| [allowed_extensions](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String Array | An array of Browser Extensions [add-on ID's](https://extensionworkshop.com/documentation/develop/extensions-and-the-add-on-id/) defined in ```browser_specific_settings``` in the ```manifest.json``` for the Browser Extension Plugin |
+
+
+
