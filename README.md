@@ -23,11 +23,11 @@ BEP loads a single Clarion app for the lifetime of every instance of the Browser
 
 The Clarion app does not have to be so optimised and lightweight, making AppGen apps viable options without affecting workstation CPU workloads unnecessarily under heavy use.
 
-Can also be further extended by being an optimised lightweight handcoded Proxy project to each Browser instance for every User logged on to the machine in turn communicating to a single Clarion app instance which can be a Service for the duration of the User's desktop session or machine session. Think Terminal Server here.
-
-The Console window which is hidden immediately after creation can cause a flicker which is more acceptible because it only happens once per each Browser instance.
+The Console window which is hidden immediately after creation can cause a flicker which is more acceptible because it only happens once per each Browser instance startup.
 
 Using StdIn StdOut Anonymous pipes can eliminate the Console window flicker problem.
+
+Can also be further extended by being a combination of a multiple optimised lightweight Proxy handcoded projects to each Browser instance for every User logged on to the machine which in turn communicates with a single Clarion "Master Control Program" app, which can be a Service, for the duration of the User's desktop session or machine session. Each Proxy interface between the Browser and "Master Control Program" will create the flicker when it hides the Console window.
 
 
 ### Browser Specific Extension Plugin
