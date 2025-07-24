@@ -165,6 +165,10 @@ browser.runtime
 
 The Structure or Properties of ```message``` depends entirely on what the sender includes. There is no fixed schema.
 
+The Structure or Properties of ```message``` depends entirely on what the sender includes. There is no fixed schema.
+
+The Structure or Properties of ```message``` depends entirely on what the sender includes. There is no fixed schema.
+
 The properties sent from different Methods that send to ```.onMessage```.
 
 [runtime.sendMessage()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendMessage)
