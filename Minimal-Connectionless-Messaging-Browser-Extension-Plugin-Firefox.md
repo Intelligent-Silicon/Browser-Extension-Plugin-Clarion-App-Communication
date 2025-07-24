@@ -77,7 +77,7 @@ removeListener(listener,filter) ! Stop listening to this event. The listener arg
 hasListener(listener,filter) ! Check whether listener is registered for this event. Returns true if it is listening, false otherwise.
 ```
 
-```listener``` is a function you define that receives a ```details``` object when the event fire.
+```listener``` is the object name that receives the ```details``` object properties linked to the Web Extension api WebNavigation when the event fires.
 ```filter``` is an object that restricts the listener to specific URLs or patterns. eg defined before the WebNavigation event listener, this will trigger only when pages from 'example.com' or domains starting with 'developer' match the webNavigation event function listener.
 
 ```
