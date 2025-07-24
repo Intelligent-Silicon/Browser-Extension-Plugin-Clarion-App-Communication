@@ -150,11 +150,22 @@ browser.webNavigation.onBeforeNavigate.addListener((details) =>
 
 ### content_script.js
 
+```
+browser.runtime
+```
+```browser.runtime``` provides information about your extension and the environment it's running on, messaging APIs enabling you to communicate between different parts of your extension, other extensions and native applications.
+
+```
+.onMessage
+```
+```onMessage``` is an event for listening to messages from another part of (your) extension(s) or native application. eg listening for messages from a ```background.js``` and vice versa, or an [options page or popup](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Anatomy_of_a_WebExtension#sidebars_popups_and_options_pages).
+A more robust way to send messages between background scripts and content scripts is to use [connection-based messaging](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#connection-based_messaging). 
+
 
 ### Clarion_AppName.manifest
 
 This is whats called an [App manifest file](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_messaging#app_manifest). It needs to be installed alongside the Clarion app exe and match the name of the exe. eg ```ClaAppName.manifest``` must match ```ClaAppName.exe```.
-The manifest file provides additional information controlling how the ClaAppName.exe communicates with the Browser.
+The manifest file provides additional information controlling how the ClaAppName.exe communicates with the Browser. Without it, the Browser can not communicate with the Clarion app.
 
 
 | Element | Value | Description |
@@ -163,7 +174,7 @@ The manifest file provides additional information controlling how the ClaAppName
 | [Description](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String | Description of the native application. |
 | [Path](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String | Path to the native application, relative to the ```ClaAppName.manifest``` file. |
 | [Type](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String | Takes the value "stdio" only, which indicates that messages are received by the Clarion app using [Console window](https://learn.microsoft.com/en-us/windows/console/consoles) or [Anonymous Pipes](https://learn.microsoft.com/en-us/windows/win32/procthread/creating-a-child-process-with-redirected-input-and-output) standard input (stdin) and sent using standard output (stdout). |
-| [allowed_extensions](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String Array | An array of Browser Extensions [add-on ID's](https://extensionworkshop.com/documentation/develop/extensions-and-the-add-on-id/) defined in ```browser_specific_settings``` in the ```manifest.json``` for the Browser Extension Plugin |
+| [allowed_extensions](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String Array | An array of Browser Extensions [add-on ID's](https://extensionworkshop.com/documentation/develop/extensions-and-the-add-on-id/) defined in ```browser_specific_settings``` in the ```manifest.json``` for the Browser Extension Plugin. |
 
 
 
