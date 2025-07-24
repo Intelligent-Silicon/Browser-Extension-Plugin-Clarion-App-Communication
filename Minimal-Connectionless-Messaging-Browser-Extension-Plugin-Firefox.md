@@ -41,7 +41,7 @@ Minimal Required Information for a manifest.json file:
 | [name](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/name) | "My 45 Character Browser Extension Plugin Name" | Identify the extension in the browser's user interface and on sites like https://addons.mozilla.org (50char max), https://chromewebstore.google.com (75 char max) & https://microsoftedge.microsoft.com/addons (45 char max). |
 | [version](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/version) | n.n.n.n | The version string consists of 1 to 4 numbers separated by dots, for example, 1.2.3.4. Non-zero numbers must not include a leading zero. For example, 2.01 is not allowed; however, 0.2, 2.0.1, and 2.10 are allowed. |
 
-Additional Required Information for a Clarion app to use NativeCommunication:
+Additional Required Information for a Clarion app to use NativeCommunication aka [Native Messaging](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_messaging):
 
 | Key | Value | Description |
 | --- | --- | --- | 
