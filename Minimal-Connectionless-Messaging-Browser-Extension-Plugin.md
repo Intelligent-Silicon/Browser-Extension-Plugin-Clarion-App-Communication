@@ -175,7 +175,7 @@ The properties sent from different Methods that send to ```.onMessage```.
 | Parameter | Data Type | Notes |
 | --- | --- | --- |
 | extensionId | String | If extensionId is omitted, the message is sent to your extension. The ID of the extension to send the message to. Include this to send the message to a different extension. |
-| message | Any | An object that can be structured clone serialized |
+| message | Any | An object that can be a [structured clone serialized](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Chrome_incompatibilities#data_cloning_algorithm) |
 | options | Object | |
 | includeTlsChannelId | Boolean | The TLS channel ID passed into runtime.onMessageExternal for processes that are listening for the connection event. |
 
@@ -203,7 +203,7 @@ Commonly used properties of ```message``` found across other extensions and webs
 if (message.type === "showPopup") { alert(`User typed or reloaded URL:\n${message.url}\n(Transition: ${message.transitionType})`) }
 ```
   
-Avoid creating multiple ```onMessage()``` listeners for the same type of message ```if (message.type === "showPopup")``` because the order in which multiple listeners fire is strangely not guaranteed!!!
+Avoid creating multiple ```onMessage()``` listeners for the same type of message ```if (message.type === "showPopup")``` because the order in which multiple listeners fire is strangely not guaranteed!!! An interesting insight into the working internals.
 
 So a better way to send messages between background scripts and content scripts is to use [connection-based messaging](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#connection-based_messaging). 
 
@@ -226,3 +226,297 @@ The manifest file provides additional information controlling how the ClaAppName
 
 
 [Complete Firefox ClaAppName.manifest file for download](Firefox/ClaAppName.manifest)
+
+
+### Clarion_AppName.exe
+
+```
+PROGRAM
+
+OMIT('***')
+ * Created with Clarion 11.0
+ * User: Admin1
+ * Date: 22/07/2025
+ * Time: 13:10
+ * 
+ * To change this template use Tools | Options | Coding | Edit Standard Headers.
+ ***
+
+
+ISEQ:Dword						Equate(4294967295)  ! StdIn StdOut StdError
+ISEQ:STD_INPUT_HANDLE       	Equate(4294967286) 	! ISEQ:Dword-10
+ISEQ:STD_OUTPUT_HANDLE      	Equate(4294967285)	! ISEQ:Dword-11)
+ISEQ:STD_ERROR_HANDLE           Equate(4294967284)  ! ISEQ:Dword-12)
+
+ISEQ:File_Share_None        Equate(00h)
+ISEQ:File_Share_Delete      Equate(04h)
+ISEQ:File_Share_Read        Equate(01h)
+ISEQ:File_Share_Write       Equate(02h)
+
+ISEQ:File_Generic_All            Equate(010000000h)
+ISEQ:File_Generic_Execute        Equate(020000000h)
+ISEQ:File_Generic_Write          Equate(040000000h)
+ISEQ:File_Generic_Read           Equate(080000000h)
+
+ISEQ:File_Create_New            Equate(1)
+ISEQ:File_Create_Always         Equate(2)
+ISEQ:File_Open_Existing         Equate(3) ! For devices other than files, this parameter is usually set to OPEN_EXISTING.
+ISEQ:File_Open_Always           Equate(4)
+ISEQ:File_Truncate_Existing     Equate(5)
+
+ISEQ:File_Attribute_Hidden          Equate(00002h)
+ISEQ:File_Attribute_Archive         Equate(00020h) 
+ISEQ:File_Attribute_Normal          Equate(00080h)
+ISEQ:File_Attribute_Encrypted       Equate(04000h)
+
+ISEQ:Handle                     Equate(2147483647) ! Long range -2,147,483,648 to 2,147,483,647
+ISEQ:INVALID_HANDLE_VALUE       Equate(-1) ! ISEQ:Handle - 1  
+ISEQ:ATTACH_PARENT_PROCESS      Equate(-1) ! (Dword) - 1
+!Code Page Equates
+ISEQ:CP_ACP			Equate(1)		! The system default Windows ANSI code page.
+								! Note  This value can be different on different computers, even on the same network. It can be changed on the same computer, leading to stored data becoming irrecoverably corrupted. This value is only intended for temporary use and permanent storage should use UTF-16 or UTF-8 if possible.
+ISEQ:CP_MACCP		Equate(2)		! The current system Macintosh code page.
+								! Note  This value can be different on different computers, even on the same network. It can be changed on the same computer, leading to stored data becoming irrecoverably corrupted. This value is only intended for temporary use and permanent storage should use UTF-16 or UTF-8 if possible.
+                                ! Note   This value is used primarily in legacy code and should not generally be needed since modern Macintosh computers use Unicode for encoding.
+ISEQ:CP_OEMCP 		Equate(3)		! The current system OEM code page.
+								! Note  This value can be different on different computers, even on the same network. It can be changed on the same computer, leading to stored data becoming irrecoverably corrupted. This value is only intended for temporary use and permanent storage should use UTF-16 or UTF-8 if possible.
+ISEQ:CP_SYMBOL		Equate(4)		! Symbol code page (42).
+ISEQ:CP_THREAD_ACP 	Equate(5)	! The Windows ANSI code page for the current thread.
+								! Note  This value can be different on different computers, even on the same network. It can be changed on the same computer, leading to stored data becoming irrecoverably corrupted. This value is only intended for temporary use and permanent storage should use UTF-16 or UTF-8 if possible.
+ISEQ:CP_UTF7 		Equate(6)	! UTF-7. Use this value only when forced by a 7-bit transport mechanism. Use of UTF-8 is preferred.
+ISEQ:CP_UTF8        Equate(7)	! UTF-8.   
+
+ISEQ:CSIDL_COMMON_APPDATA   Equate(35) ! C:\ProgramData or C:\Documents and Settings\All Users\Application Data
+
+ISEQ:S_OK           Equate(0)    
+
+ISEQ:ERROR_INVALID_USER_BUFFER      Equate(1784)    ! The supplied user buffer is not valid for the requested operation. 
+ISEQ:ERROR_OPERATION_ABORTED        Equate(995)     ! The I/O operation has been aborted because of either a thread exit or an application request.
+ISEQ:ERROR_NOT_ENOUGH_QUOTA         Equate(1816)    ! Not enough quota is available to process this command.
+
+
+!ISDT:OverLapped     GROUP,TYPE
+!InternalLow             Ulong       ! ULONG_PTR
+!InternalHigh            Ulong       ! ULONG_PTR
+!OffsetLow               Ulong       ! OffsetLow 32 bits ----| OffsetLow & OffsetHigh can be 
+!OffsetHigh              Ulong       ! OffsetHigh 32 bits ---| a single Pointer, assuming 64bit
+!hEvent                  Ulong       ! HANDLE Usually a Long, but Co-pilot suggests an unsigned aka a Ulong
+!                    END
+
+Glo:ConsoleWindowHandle    Long            
+Glo:WorkingFolderPath   Cstring(1024)
+Glo:CSIDL_FolderPath    Cstring(1024)
+Glo:FolderFilename      Cstring(1024)
+Glo:RVLong              Long
+Glo:RVBool              Bool
+Glo:CurrentPID          Ulong
+Glo:DebuggerCommandLine Cstring(1024)   
+                                
+
+SECURITY_DESCRIPTOR         Group
+Revision                    BYTE    ! Revision;
+Sbz1                        BYTE    ! Sbz1;
+Control                     Ushort  ! SECURITY_DESCRIPTOR_CONTROL Control;
+Owner                       Long    ! PSID                        Owner;
+Group                       Long    ! PSID                        Group ;
+Sacl                        Long    ! PACL                        Sacl;
+Dacl                        Long    ! PACL                        Dacl  ;
+                            End
+
+
+SECURITY_ATTRIBUTES     Group
+nLength                 Ulong   ! DWORD  nLength;
+lpSecurityDescriptor    Long    ! Address(SECURITY_DESCRIPTOR) LPVOID lpSecurityDescriptor;
+bInheritHandle          BOOL    ! bInheritHandle;
+                        End
+
+    MAP
+Main        PROCEDURE()
+    MODULE('api')
+    !ISWA_ODS(*CSTRING cMsg),PASCAL,DLL(1),RAW,NAME('OutputDebugStringA')
+    !Kernel32.dll
+    ISWA_AllocConsole(),Byte,Pascal,Name('AllocConsole')
+    ISWA_AttachConsole(Ulong),Bool, Pascal,Name('AttachConsole')
+    !ISWA_CreateFileA(*Cstring,Ulong,Ulong,Long,Ulong,Ulong,Long),Long,Pascal,Name('CreateFileA')
+    ISWA_CreateFileA(Long,Ulong,Ulong,Long,Ulong,Ulong,Long),Long,Pascal,Name('CreateFileA')
+    ISWA_GetConsoleWindow(),Long,Pascal,Name('GetConsoleWindow')
+    ISWA_GetCurrentProcessId(Long),Ulong,Pascal,Name('GetCurrentProcessId')
+    ISWA_FreeConsole(),Byte,Pascal,Name('FreeConsole')
+    !ISWA_GetACP(),Ulong,Pascal,Raw,Name('GetACP')     
+    !ISWA_GetCurrentProcessId(Long),Ulong,Pascal,Name('GetCurrentProcessId')
+	!ISWA_GetOEMCP(),Ulong,Pascal,Raw,Name('GetOEMCP')
+    ISWA_GetLastError(),Ulong,Pascal,Name('GetLastError') 
+    ISWA_GetStdHandle(Ulong),Long,PASCAL,Name('GetStdHandle') !https://learn.microsoft.com/en-us/windows/console/getstdhandle
+	!ISWA_MultiByteToWideChar(Ulong,Ulong,Long,Long,Long,Long),long,Pascal,Raw,Name('MultiByteToWideChar')
+    ISWA_ReadFile(Ulong, *CSTRING, Ulong, Ulong, Ulong),Long,PASCAL,Name('ReadFile')  !https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-readfile
+	ISWA_ReadFile(Long, Long, Ulong, Long, <Long>),Bool,PASCAL,Name('ReadFile')  !https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-readfile
+	ISWA_ShowWindow(Long,Long),Bool,Pascal,Name('ShowWindow')
+    !ISWA_WideCharToMultiByte(Ulong,Ulong,Long,Long,Long,Long,Long,Long),Long,Pascal,Raw,Name('WideCharToMultiByte')
+    !ISWA_WriteFile(Ulong, *CSTRING, Ulong, *Ulong, Ulong),Long,PASCAL,Name('WriteFile')  !https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-writefile
+    
+    !Shell32.dll
+    !ISWA_SHGetSpecialFolderLocation(Long, Long, Long), Long
+    ISWA_SHGetFolderPathA(Long, Long, Long, Ulong, Long), Long, Pascal,Raw,Name('SHGetFolderPathA') 
+    !ISWA_SHGetKnownFolderPath(Long,Ulong,Long,Long),long,Pascal,Raw,Name('SHGetKnownFolderPath')
+    ISWA_SHCreateDirectoryExA(long,*Cstring,Long),Long,Pascal,Raw,Name('SHCreateDirectoryExA')
+    END
+
+    END
+
+!region File Declaration
+BrowserOutput        FILE,DRIVER('TOPSPEED'),NAME(Glo:FolderFilename),PRE(BO),CREATE,BINDABLE,THREAD !
+!BrowserOutput        FILE,DRIVER('TOPSPEED'),NAME('BrowserOutput.tps'),PRE(BO),CREATE,BINDABLE,THREAD !                    
+Record                   RECORD,PRE()
+BrowserOutputDate           LONG                           !                     
+BrowserOutputTime           LONG                           !                     
+BrowserOutput_utf8          STRING(8196)                   !                     
+                         END
+                     END                       
+
+!endregion
+
+
+    CODE
+
+    !Run('"C:\Clarion11\bin\Cladbne.exe"', 0) ! Loads Cladb
+    Glo:CurrentPID = ISWA_GetCurrentProcessId(0)
+    Message('Glo:CurrentPID = ' & Glo:CurrentPID)
+    Glo:DebuggerCommandLine = '"C:\Clarion11\bin\Cladbne.exe" -p ' & Glo:CurrentPID
+    !Run(Glo:DebuggerCommandLine, 0) ! Does not "appear" to work
+    Glo:DebuggerCommandLine = '"C:\Clarion11\bin\Cladb.exe" -p ' & Glo:CurrentPID
+    !Run(Glo:DebuggerCommandLine, 0) ! Works - Well you get the UAC prompt, but then ClaDB dissappears - Windows Defender possibly?
+    !Run('"C:\Clarion11\bin\Cladbne.exe -p ' & Glo:CurrentPID & '"', 0) ! Does not "appear" to work
+    !Run('"C:\Clarion11\bin\Cladbne.exe"', 0) ! Does not "appear" to work
+    !Run('"C:\Clarion11\bin\Cladbne.exe" -p' & Glo:CurrentPID, 0) ! Does not "appear" to work
+    Main()
+    Return
+
+Main    Procedure
+
+Loc:CreateConsole           Bool
+
+Loc:FreeConsole             Bool
+Loc:LastErrorCode           Long
+Loc:StdIn_Handle            Long
+Loc:StdOut_Handle           Long
+Loc:Buffer_Ansi             Cstring(8192)
+Loc:Buffer_Ansi_Read_Size   Long
+Loc:ConsoleFilename         Cstring(256)
+
+    Code        
+
+    Glo:RVBool = ISWA_AttachConsole(ISEQ:ATTACH_PARENT_PROCESS)
+    Loc:LastErrorCode = ISWA_GetLastError()
+    ! https://developer.chrome.com/docs/extensions/develop/concepts/messaging#port-lifetime
+    ! https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilea#consoles     
+    Loc:ConsoleFilename     = 'CONIN$'
+!    Loc:StdIn_Handle = ISWA_CreateFileA(    Address(Loc:ConsoleFilename),|
+!                                            ISEQ:File_Generic_Write + ISEQ:File_Generic_Write,|
+!                                            0,|
+!                                            0,|
+!                                            ISEQ:File_Open_Existing,|
+!                                            0,|
+!                                            0)
+!    Loc:LastErrorCode = ISWA_GetLastError()
+!    -1
+
+    Loc:StdIn_Handle = ISWA_CreateFileA(    Address(Loc:ConsoleFilename),|
+                                            ISEQ:File_Generic_Read + ISEQ:File_Generic_Write,|
+                                            ISEQ:File_Share_Read + ISEQ:File_Share_Write,|
+                                            0,| !lpSecurityAttributes
+                                            ISEQ:File_Open_Existing,|
+                                            0,| !Ignored
+                                            0)  !Ignored
+    Loc:LastErrorCode = ISWA_GetLastError()
+
+
+
+
+    Loc:CreateConsole = ISWA_AllocConsole()  !This creates a new console window 
+    Loc:LastErrorCode = ISWA_GetLastError()
+
+    IF Loc:CreateConsole = 0 and Loc:LastErrorCode
+	    Message('Create Console Error = ' & Loc:LastErrorCode )
+        Return 
+    Else 
+        Glo:ConsoleWindowHandle = ISWA_GetConsoleWindow()  ! Handle to Console Window
+        Glo:RVBool = ISWA_ShowWindow(Glo:ConsoleWindowHandle,0)  ! This hides the console window, but you still get a flicker!
+
+        Loc:StdIn_Handle    = ISWA_GetStdHandle(ISEQ:STD_INPUT_HANDLE)  ! STD_INPUT_HANDLE
+        Loc:LastErrorCode   = ISWA_GetLastError()
+
+	    IF Loc:StdIn_Handle = ISEQ:Invalid_Handle_Value and Loc:LastErrorCode
+		    Message('StdIn Handle Error = ' & Loc:LastErrorCode )
+            Return
+        End   
+
+        Loc:StdOut_Handle   = ISWA_GetStdHandle(ISEQ:STD_OUTPUT_HANDLE) ! STD_OUTPUT_HANDLE
+        Loc:LastErrorCode   = ISWA_GetLastError()
+	    If Loc:StdOut_Handle = ISEQ:Invalid_Handle_Value and Loc:LastErrorCode
+		    Message('StdOut Handle Error = ' & Loc:LastErrorCode )
+            Return
+        End
+    End            
+
+! Characters can be read from the console input buffer by using ReadFile with a handle to console input. 
+! The console mode determines the exact behavior of the ReadFile function. 
+! By default, the console mode is ENABLE_LINE_INPUT, which indicates that ReadFile should read 
+! until it reaches a carriage return. 
+! If you press Ctrl+C, the call succeeds, but GetLastError returns ERROR_OPERATION_ABORTED. 
+! For more information, see CreateFile.
+
+    Glo:RVBool          = ISWA_ReadFile(Loc:Stdin_Handle, Address(Loc:Buffer_Ansi), -1, Address(Loc:Buffer_Ansi_Read_Size), 0)
+    Loc:LastErrorCode   = ISWA_GetLastError()    
+    
+    Loc:FreeConsole     = ISWA_FreeConsole()
+    Loc:LastErrorCode   = ISWA_GetLastError()
+
+    IF Loc:FreeConsole = 0 and Loc:LastErrorCode
+	    Return 
+    End
+
+    Glo:RVLong = ISWA_SHGetFolderPathA(0,ISEQ:CSIDL_COMMON_APPDATA,0,0,Address(Glo:CSIDL_FolderPath))
+    IF Glo:CSIDL_FolderPath
+        Glo:FolderFilename = Glo:CSIDL_FolderPath & '\pcwt'
+        !Glo:RVBool = CreateDirectory(Glo:FolderFilename)
+        !Glo:RVBool = mkdir(Glo:FolderFilename)
+        Glo:RVLong = ISWA_SHCreateDirectoryExA(0,Glo:FolderFilename,0)
+        IF Glo:RVLong
+            IF Not (Glo:RVLong = 80 xor Glo:RVLong = 183) !ERROR_FILE_EXISTS and ERROR_ALREADY_EXISTS 
+                Return
+            End
+        End
+    Else
+        Return
+    End
+    Glo:FolderFilename = Glo:FolderFilename &'\pcwtpipe.tps'
+    Open(BrowserOutput)
+    IF ErrorCode()
+        IF ErrorCode() = 2
+            Create(BrowserOutput)
+            IF ErrorCode()
+                Return
+            Else
+                Open(BrowserOutput)
+                IF ErrorCode()
+                    Return
+                End
+            End
+        Else
+            Return
+        End
+    End
+
+    BO:BrowserOutputDate    = Today()
+    BO:BrowserOutputTime    = Clock()
+    BO:BrowserOutput_utf8   = Loc:Buffer_Ansi
+    Add(BrowserOutput)
+    IF ErrorCode()
+        Return
+    End 
+
+    Close(BrowserOutput)
+    IF ErrorCode()
+        Return
+    End   
+```
