@@ -6,7 +6,7 @@ A Minimal example of a Connectionless Messaging Browser Extension Plugin.
 
 Store the files listed below in a folder for testing purposes. Once uploaded to a Browser's Addon store, these files are managed and stored by the Browser automatically. These files are explicitly required for the Browser Extension Plugin addon. 
 
-eg ```c:\MyBrowserExtensionForClarion\v1\```
+eg ```c:\MyBrowserExtensionUsingClarion\v1\```
 
 
     ├── Manifest.json
@@ -17,7 +17,7 @@ eg ```c:\MyBrowserExtensionForClarion\v1\```
 
 To load the Browser Extension Plugin for testing purposes.
 ``` 
-about:debugging -> This Firefox -> Load Temporary Add-on... -> Navigate to ```c:\MyBrowserExtensionForClarion\v1\``` and select ```manifest.json```.
+Type 'about:debugging' into Omnibox (address box) -> This Firefox -> Load Temporary Add-on... -> Navigate to ```c:\MyBrowserExtensionUsingClarion\v1\``` and select ```manifest.json```.
 ```
 
 
