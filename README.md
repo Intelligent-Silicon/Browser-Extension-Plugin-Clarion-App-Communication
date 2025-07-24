@@ -42,7 +42,7 @@ Can also be further extended by being a combination of a multiple optimised ligh
 
 ### Browser Extension Plugin File Overview
 
-[Firefox Minimal Connectionless Messaging Browser Extension Plugin](Minimal-Connectionless-Messaging-Browser-Extension-Plugin-Firefox.md)
+[Firefox Minimal Connectionless Messaging Browser Extension Plugin](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md)
 
 [Minimal Persistent Connection Messaging Browser Extension Plugin](Minimal-Persistent-Connection-Messaging-Browser-Extension-Plugin.md)
 

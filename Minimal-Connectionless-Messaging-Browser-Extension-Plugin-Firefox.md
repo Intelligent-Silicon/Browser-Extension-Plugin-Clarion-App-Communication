@@ -147,4 +147,4 @@ browser.webNavigation.onBeforeNavigate.addListener((details) =>
 );
 ```
 
-[Complete Background.js file for download](Firefox/background.js)
+[Complete Firefox Background.js file for download](Firefox/background.js)
