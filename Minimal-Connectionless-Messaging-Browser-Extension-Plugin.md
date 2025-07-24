@@ -198,6 +198,21 @@ Commonly used properties of ```message``` found across other extensions and webs
 | url | URL being referenced or acted upon |
 | content | Arbitrary content passed from sender | 
 
+Javascript example of how ```message``` could be setup, its purely upto the developer.
+```
+// Sender
+browser.runtime.sendMessage({
+  type: "ping",
+  data: "Hello from content script"
+});
+
+// Listener
+browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  console.log("Received message:", message);
+  console.log("Type:", message.type);   // "ping"
+  console.log("Data:", message.data);   // "Hello from content script"
+});
+```
 
 ```
 if (message.type === "showPopup") { alert(`User typed or reloaded URL:\n${message.url}\n(Transition: ${message.transitionType})`) }
@@ -270,8 +285,7 @@ ISEQ:File_Attribute_Normal          Equate(00080h)
 ISEQ:File_Attribute_Encrypted       Equate(04000h)
 
 ISEQ:Handle                     Equate(2147483647) ! Long range -2,147,483,648 to 2,147,483,647
-ISEQ:INVALID_HANDLE_VALUE       Equate(-1) ! ISEQ:Handle - 1  
-ISEQ:ATTACH_PARENT_PROCESS      Equate(-1) ! (Dword) - 1
+ISEQ:INVALID_HANDLE_VALUE       Equate(-1) ! ISEQ:Handle - 1
 !Code Page Equates
 ISEQ:CP_ACP			Equate(1)		! The system default Windows ANSI code page.
 								! Note  This value can be different on different computers, even on the same network. It can be changed on the same computer, leading to stored data becoming irrecoverably corrupted. This value is only intended for temporary use and permanent storage should use UTF-16 or UTF-8 if possible.
@@ -310,25 +324,7 @@ Glo:FolderFilename      Cstring(1024)
 Glo:RVLong              Long
 Glo:RVBool              Bool
 Glo:CurrentPID          Ulong
-Glo:DebuggerCommandLine Cstring(1024)   
-                                
-
-SECURITY_DESCRIPTOR         Group
-Revision                    BYTE    ! Revision;
-Sbz1                        BYTE    ! Sbz1;
-Control                     Ushort  ! SECURITY_DESCRIPTOR_CONTROL Control;
-Owner                       Long    ! PSID                        Owner;
-Group                       Long    ! PSID                        Group ;
-Sacl                        Long    ! PACL                        Sacl;
-Dacl                        Long    ! PACL                        Dacl  ;
-                            End
-
-
-SECURITY_ATTRIBUTES     Group
-nLength                 Ulong   ! DWORD  nLength;
-lpSecurityDescriptor    Long    ! Address(SECURITY_DESCRIPTOR) LPVOID lpSecurityDescriptor;
-bInheritHandle          BOOL    ! bInheritHandle;
-                        End
+Glo:DebuggerCommandLine Cstring(1024)
 
     MAP
 Main        PROCEDURE()
@@ -336,9 +332,8 @@ Main        PROCEDURE()
     !ISWA_ODS(*CSTRING cMsg),PASCAL,DLL(1),RAW,NAME('OutputDebugStringA')
     !Kernel32.dll
     ISWA_AllocConsole(),Byte,Pascal,Name('AllocConsole')
-    ISWA_AttachConsole(Ulong),Bool, Pascal,Name('AttachConsole')
     !ISWA_CreateFileA(*Cstring,Ulong,Ulong,Long,Ulong,Ulong,Long),Long,Pascal,Name('CreateFileA')
-    ISWA_CreateFileA(Long,Ulong,Ulong,Long,Ulong,Ulong,Long),Long,Pascal,Name('CreateFileA')
+    !ISWA_CreateFileA(Long,Ulong,Ulong,Long,Ulong,Ulong,Long),Long,Pascal,Name('CreateFileA')
     ISWA_GetConsoleWindow(),Long,Pascal,Name('GetConsoleWindow')
     ISWA_GetCurrentProcessId(Long),Ulong,Pascal,Name('GetCurrentProcessId')
     ISWA_FreeConsole(),Byte,Pascal,Name('FreeConsole')
@@ -401,36 +396,8 @@ Loc:StdIn_Handle            Long
 Loc:StdOut_Handle           Long
 Loc:Buffer_Ansi             Cstring(8192)
 Loc:Buffer_Ansi_Read_Size   Long
-Loc:ConsoleFilename         Cstring(256)
 
-    Code        
-
-    Glo:RVBool = ISWA_AttachConsole(ISEQ:ATTACH_PARENT_PROCESS)
-    Loc:LastErrorCode = ISWA_GetLastError()
-    ! https://developer.chrome.com/docs/extensions/develop/concepts/messaging#port-lifetime
-    ! https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilea#consoles     
-    Loc:ConsoleFilename     = 'CONIN$'
-!    Loc:StdIn_Handle = ISWA_CreateFileA(    Address(Loc:ConsoleFilename),|
-!                                            ISEQ:File_Generic_Write + ISEQ:File_Generic_Write,|
-!                                            0,|
-!                                            0,|
-!                                            ISEQ:File_Open_Existing,|
-!                                            0,|
-!                                            0)
-!    Loc:LastErrorCode = ISWA_GetLastError()
-!    -1
-
-    Loc:StdIn_Handle = ISWA_CreateFileA(    Address(Loc:ConsoleFilename),|
-                                            ISEQ:File_Generic_Read + ISEQ:File_Generic_Write,|
-                                            ISEQ:File_Share_Read + ISEQ:File_Share_Write,|
-                                            0,| !lpSecurityAttributes
-                                            ISEQ:File_Open_Existing,|
-                                            0,| !Ignored
-                                            0)  !Ignored
-    Loc:LastErrorCode = ISWA_GetLastError()
-
-
-
+    Code
 
     Loc:CreateConsole = ISWA_AllocConsole()  !This creates a new console window 
     Loc:LastErrorCode = ISWA_GetLastError()
