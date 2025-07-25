@@ -536,58 +536,18 @@ If the message box doesnt appear when you open a new tab or navigate to a webpag
 
 ### Clarion Debugger
 
-Due to Browser permission levels, open a DOS window and navigate to the Clarion\bin folder
-```
-"C:\Clarion11\bin\Cladb.exe"  -s Debug  -c "C:\Users\Admin1\AppData\Roaming\SoftVelocity\Clarion\11.0"  -p <Process ID> 
-"C:\Clarion11\bin\Cladb.exe"  -p <Process ID> 
-```
+Use the method below to learn how to step in to the running ClaNameApp app after its been called by the Web Browser via the plugins.
 
+[Call-Clarion-Debugger-from-running-App](https://github.com/Intelligent-Silicon/Call-Clarion-Debugger-from-running-App)
 
-This command loads the Debugger, confirm the UAC prompt, if prompted, and the Trace window will be visible which is stored to C:\Clarion11\bin\D32.log. Next click Window, Source and select ClaAppName.clw. The source code then appears in the top left window pane, navigate down to Main() and set a breakpoint. As soon as you click on the Source window, the Procedure's window pane in the bottom left appears.
-
+If you are using the ```Message('Glo:CurrentPID = ' & Glo:CurrentPID)``` to act as a psuedo breakpoint, clicking the ```reload``` button seen in the Firefox ```about:debugging``` window, will trigger a reload of the ```manifest.json``` file, and the ```background.js``` file which will then call the ```ClaNameApp``` app. This can be useful with getting familar with the process. When ready comment the javascript code out using ```/*``` and ```*/``` as seen below.
 
 ```
-C:\Users\Admin1>cd "C:\Clarion11\bin"
-C:\Clarion11\bin> cladb.exe -p <ProcessID>
+/*
+const ClaAppName = browser.runtime.connectNative("claappname");
+const Message = `The ClaAppName background.js file has loaded!`;
+ClaAppName.postMessage(Message);
+*/
 ```
 
-"C:\Clarion11\bin\Cladb.exe"  -s Debug  -c "C:\Users\Admin1\AppData\Roaming\SoftVelocity\Clarion\11.0"  "C:\ClaAppName\v1\ClaAppName.Exe" 
-
- "C:\Clarion11\bin\Cladb.exe"  -s Debug  -c "C:\Users\Admin1\AppData\Roaming\SoftVelocity\Clarion\11.0"  "C:\ClaAppName\v1\ClaAppName.Exe"
- 
- "C:\Clarion11\bin\Cladb.exe"  -s Debug  -c "C:\Users\Admin1\AppData\Roaming\SoftVelocity\Clarion\11.0"  -p 
- 
-  "C:\Clarion11\bin\Cladb.exe"  -s Debug  -c "C:\Users\Admin1\AppData\Roaming\SoftVelocity\Clarion\11.0"  "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.Exe" -p 
-``` 
- Started 
-Heap handle: 07000000
-start process C:\ClaAppName\v1\ClaAppName.Exe
-Command line :> "C:\Clarion11\bin\Cladb.exe"  -s Debug  -c "C:\Users\Admin1\AppData\Roaming\SoftVelocity\Clarion\11.0"  "C:\ClaAppName\v1\ClaAppName.Exe" 
-Command line :> "C:\ClaAppName\v1\ClaAppName.Exe" 
-Redirection file :> 
-CREATE_PROCESS_DEBUG_EVENT  ! No image name found
-g.debug_name C:\ClaAppName\v1\ClaAppName.Exe
-BaseOfImage                00400000
-CREATE_PROCESS_DEBUG_EVENT: process main thread tid=00002454
-```
-
-
-In the Clarion Debugger, click File, File to Debug, navigate to the folder c:\MyBrowserExtensionUsingClarion\v1\
-Select ClaAppName.exe. 
-Wait until the bottom left Procedure window/pane appears, select _main
-Set a Breakpoint on Main(), the next line below this, then debug away until your hearts content!
-    
-    
-claappname
-Warning details
-
-Reading manifest: "applications" property ignored and overridden by "browser_specific_settings"
-Location
-    C:/MyBrowserExtensionUsingClarion/v1/
-Extension ID
-    0339088b-ba1a-44dd-baee-da8de84e222d@intelligentsilicon
-Internal UUID
-    ac5a88ff-7dad-4c1c-88c3-59b96c8f8ce6
-Manifest URL
-    moz-extension://ac5a88ff-7dad-4c1c-88c3-59b96c8f8ce6/manifest.json
 

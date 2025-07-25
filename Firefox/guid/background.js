@@ -12,10 +12,11 @@ The ClaAppName.clw:Message('Glo:CurrentPID = ' & Glo:CurrentPID) will appear and
 */
 
 console.log("The ClaAppName background.js file has loaded!");
+// /* 
 const ClaAppName = browser.runtime.connectNative("claappname");
 const Message = `The ClaAppName background.js file has loaded!`;
 ClaAppName.postMessage(Message);
-
+// */
 browser.webNavigation.onCreatedNavigationTarget.addListener((details) => 
 {
     console.log("The ClaAppName background.js onCreatedNavigationTarget event");
