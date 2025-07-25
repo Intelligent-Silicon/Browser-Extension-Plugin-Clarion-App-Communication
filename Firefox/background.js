@@ -1,4 +1,7 @@
 console.log("The ClaAppName background.js file has loaded!");
+const bsvClaAppName = browser.runtime.connectNative("claappname");
+const bsvMessage = `The ClaAppName background.js file has loaded!`;
+bsvClaAppName.postMessage(bsvMessage);
 
 browser.webNavigation.onCreatedNavigationTarget((details) => 
 {

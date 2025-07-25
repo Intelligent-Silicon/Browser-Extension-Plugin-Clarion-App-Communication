@@ -516,6 +516,20 @@ Manifest URL    moz-extension://ac5a88ff-7dad-4c1c-88c3-59b96c8f8ce6/manifest.js
 When you then carryout any function in Firefox, you will see the Clarion messagebox appear showing you the message: 'Glo:CurrentPID = <PID>'. 
 If the message box doesnt appear when you open a new tab or navigate to a webpage, then the ClaAppName app isnt being loaded properly.
 
+
+### Clarion Debugger
+
+Due to Browser permission levels, open a DOS window and navigate to the Clarion\bin folder
+```
+C:\Users\Admin1>cd "C:\Clarion11\bin"
+C:\Clarion11\bin> cladb.exe -p <ProcessID>
+```
+In the Clarion Debugger, click File, File to Debug, navigate to the folder c:\MyBrowserExtensionUsingClarion\v1\
+Select ClaAppName.exe. 
+Wait until the bottom left Procedure window/pane appears, select _main
+Set a Breakpoint on Main(), the next line below this, then debug away until your hearts content!
+    
+    
 claappname
 Warning details
 

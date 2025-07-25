@@ -22,12 +22,9 @@
     }
   ],
   
-
-  
-  "browser_specific_settings": {
+  "applications": {
     "gecko": {
-    "id": "{0339088b-ba1a-44dd-baee-da8de84e222d}",
-    "strict_min_version": "1.0"
+    "id": "0339088b-ba1a-44dd-baee-da8de84e222d@intelligentsilicon"
     }
   }
 }
