@@ -20,6 +20,12 @@ To load the Browser Extension Plugin for testing purposes.
 ``` 
 Type 'about:debugging' into Omnibox (address box) -> Click 'This Firefox' -> Click 'Load Temporary Add-on...' -> Navigate to 'C:\MyBrowserExtensionUsingClarion\v1\' and select 'manifest.json'.
 ```
+A slightly quicker way is...
+``` 
+Type 'about:debugging#/runtime/this-firefox' into Omnibox (address box) -> Click 'Load Temporary Add-on...' -> Navigate to 'C:\MyBrowserExtensionUsingClarion\v1\' and select 'manifest.json'.
+```
+
+If you end up reading messages into ClaAppName and they are just 4 bytes in size, its a good time to close the Browser and reload it and reload the Browser Extension Plugin because Firefox has become unstable.
 
 
 ### Manifest.json
@@ -550,4 +556,4 @@ ClaAppName.postMessage(Message);
 */
 ```
 
-
+Tip. If you should end up with loads of message boxes showing the ProcessID for the ClaAppName, simply unload the manifest.json file and this will kill all the message boxes in one go, but only do this after you have performed your debugging operation.
