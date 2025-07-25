@@ -512,6 +512,23 @@ Extension ID    0339088b-ba1a-44dd-baee-da8de84e222d@intelligentsilicon
 Internal UUID   ac5a88ff-7dad-4c1c-88c3-59b96c8f8ce6
 Manifest URL    moz-extension://ac5a88ff-7dad-4c1c-88c3-59b96c8f8ce6/manifest.json
 ```
+Using name@domain as the manifest.json applications:gecko:id which needs to be mirrored in claappname.manifest allowed_extensions.
+```
+claappname
+Location        C:/MyBrowserExtensionUsingClarion/v1/
+Extension ID    0339088b-ba1a-44dd-baee-da8de84e222d@intelligentsilicon
+Internal UUID   {GUID}
+Manifest URL    moz-extension://{Internal UUID}/manifest.json
+```
+
+Using {GUID} as the manifest.json applications:gecko:id which needs to be mirrored in claappname.manifest allowed_extensions.
+```
+claappname
+Location        C:/MyBrowserExtensionUsingClarion/v1/
+Extension ID    {0339088b-ba1a-44dd-baee-da8de84e222d}
+Internal UUID   {GUID}
+Manifest URL    moz-extension://{Internal UUID}/manifest.json
+```
 
 When you then carryout any function in Firefox, you will see the Clarion messagebox appear showing you the message: 'Glo:CurrentPID = <PID>'. 
 If the message box doesnt appear when you open a new tab or navigate to a webpage, then the ClaAppName app isnt being loaded properly.
@@ -521,9 +538,40 @@ If the message box doesnt appear when you open a new tab or navigate to a webpag
 
 Due to Browser permission levels, open a DOS window and navigate to the Clarion\bin folder
 ```
+"C:\Clarion11\bin\Cladb.exe"  -s Debug  -c "C:\Users\Admin1\AppData\Roaming\SoftVelocity\Clarion\11.0"  -p <Process ID> 
+"C:\Clarion11\bin\Cladb.exe"  -p <Process ID> 
+```
+
+
+This command loads the Debugger, confirm the UAC prompt, if prompted, and the Trace window will be visible which is stored to C:\Clarion11\bin\D32.log. Next click Window, Source and select ClaAppName.clw. The source code then appears in the top left window pane, navigate down to Main() and set a breakpoint. As soon as you click on the Source window, the Procedure's window pane in the bottom left appears.
+
+
+```
 C:\Users\Admin1>cd "C:\Clarion11\bin"
 C:\Clarion11\bin> cladb.exe -p <ProcessID>
 ```
+
+"C:\Clarion11\bin\Cladb.exe"  -s Debug  -c "C:\Users\Admin1\AppData\Roaming\SoftVelocity\Clarion\11.0"  "C:\ClaAppName\v1\ClaAppName.Exe" 
+
+ "C:\Clarion11\bin\Cladb.exe"  -s Debug  -c "C:\Users\Admin1\AppData\Roaming\SoftVelocity\Clarion\11.0"  "C:\ClaAppName\v1\ClaAppName.Exe"
+ 
+ "C:\Clarion11\bin\Cladb.exe"  -s Debug  -c "C:\Users\Admin1\AppData\Roaming\SoftVelocity\Clarion\11.0"  -p 
+ 
+  "C:\Clarion11\bin\Cladb.exe"  -s Debug  -c "C:\Users\Admin1\AppData\Roaming\SoftVelocity\Clarion\11.0"  "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.Exe" -p 
+``` 
+ Started 
+Heap handle: 07000000
+start process C:\ClaAppName\v1\ClaAppName.Exe
+Command line :> "C:\Clarion11\bin\Cladb.exe"  -s Debug  -c "C:\Users\Admin1\AppData\Roaming\SoftVelocity\Clarion\11.0"  "C:\ClaAppName\v1\ClaAppName.Exe" 
+Command line :> "C:\ClaAppName\v1\ClaAppName.Exe" 
+Redirection file :> 
+CREATE_PROCESS_DEBUG_EVENT  ! No image name found
+g.debug_name C:\ClaAppName\v1\ClaAppName.Exe
+BaseOfImage                00400000
+CREATE_PROCESS_DEBUG_EVENT: process main thread tid=00002454
+```
+
+
 In the Clarion Debugger, click File, File to Debug, navigate to the folder c:\MyBrowserExtensionUsingClarion\v1\
 Select ClaAppName.exe. 
 Wait until the bottom left Procedure window/pane appears, select _main
