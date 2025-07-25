@@ -1,14 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "ClaAppName",
+  "name": "claappname",
   "version": "1.0",
   "description": "Recieves WebNavigation Events",
-
-  "applications": {
-    "gecko": {
-      "id": "0339088b-ba1a-44dd-baee-da8de84e222d@intelligentsilicon"
-    }
-  },
 
   "background": {
     "scripts": ["background.js"]
@@ -26,5 +20,14 @@
       "matches": ["<all_urls>"],
       "js": ["content_script.js"]
     }
-  ]
+  ],
+  
+
+  
+  "browser_specific_settings": {
+    "gecko": {
+    "id": "{0339088b-ba1a-44dd-baee-da8de84e222d}",
+    "strict_min_version": "1.0"
+    }
+  }
 }

@@ -496,5 +496,36 @@ Loc:Buffer_Ansi_Read_Size   Long
 
 Add an entry to the Windows Registry which is
 ```
-PS C:\WINDOWS\system32> REG ADD "HKCU\Software\Mozilla\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f
+PS C:\WINDOWS\system32> REG ADD "HKCU\Software\Mozilla\NativeMessagingHosts\claappname" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\claappname.manifest" /f
 ```
+
+
+
+### Firefox Temporary Extension
+
+This is what the Browser Extension Plugin will look like when its installed into Firefox.
+
+```
+ClaAppName
+Location        C:/MyBrowserExtensionUsingClarion/v1/
+Extension ID    0339088b-ba1a-44dd-baee-da8de84e222d@intelligentsilicon
+Internal UUID   ac5a88ff-7dad-4c1c-88c3-59b96c8f8ce6
+Manifest URL    moz-extension://ac5a88ff-7dad-4c1c-88c3-59b96c8f8ce6/manifest.json
+```
+
+When you then carryout any function in Firefox, you will see the Clarion messagebox appear showing you the message: 'Glo:CurrentPID = <PID>'. 
+If the message box doesnt appear when you open a new tab or navigate to a webpage, then the ClaAppName app isnt being loaded properly.
+
+claappname
+Warning details
+
+Reading manifest: "applications" property ignored and overridden by "browser_specific_settings"
+Location
+    C:/MyBrowserExtensionUsingClarion/v1/
+Extension ID
+    0339088b-ba1a-44dd-baee-da8de84e222d@intelligentsilicon
+Internal UUID
+    ac5a88ff-7dad-4c1c-88c3-59b96c8f8ce6
+Manifest URL
+    moz-extension://ac5a88ff-7dad-4c1c-88c3-59b96c8f8ce6/manifest.json
+
