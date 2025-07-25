@@ -243,8 +243,8 @@ The manifest file provides additional information controlling how the ClaAppName
 | [allowed_extensions](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String Array | An array of Browser Extension [add-on ID's](https://extensionworkshop.com/documentation/develop/extensions-and-the-add-on-id/) defined in ```browser_specific_settings``` in the ```manifest.json``` for the Browser Extension Plugin. |
 
 
-[Complete Firefox ClaAppName.manifest file for download](Firefox/ClaAppName.manifest)
-
+[Complete Firefox ClaAppName.manifest file for download using name@domain](Firefox/name/ClaAppName.manifest)
+[Complete Firefox ClaAppName.manifest file for download using {Guid}](Firefox/guid/ClaAppName.manifest)
 
 ### Clarion_AppName.exe
 

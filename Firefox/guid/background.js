@@ -1,3 +1,16 @@
+/*
+The lines before the browser.webNavigation listeners are processed when the Manifest.json is loaded in Firefox.
+If you click the About:Debugging->This Firefox->Inspect button, the Firefox debugging tool window appears, switches to the Console tab and shows the console.log message below.
+
+These lines of code, run everytime you click the About:Debugging->This Firefox->Reload button or load the manifest.json file for the first time.
+console.log("The ClaAppName background.js file has loaded!");
+const ClaAppName = browser.runtime.connectNative("claappname");
+const Message = `The ClaAppName background.js file has loaded!`;
+ClaAppName.postMessage(Message);
+
+The ClaAppName.clw:Message('Glo:CurrentPID = ' & Glo:CurrentPID) will appear and act as a breakpoint, in which to then load the Clarion Debugger and attach to the running process to aid with debugging.
+*/
+
 console.log("The ClaAppName background.js file has loaded!");
 const ClaAppName = browser.runtime.connectNative("claappname");
 const Message = `The ClaAppName background.js file has loaded!`;
