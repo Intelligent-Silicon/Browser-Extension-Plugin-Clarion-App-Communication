@@ -1,63 +1,72 @@
 console.log("The ClaAppName background.js file has loaded!");
-const bsvClaAppName = browser.runtime.connectNative("claappname");
-const bsvMessage = `The ClaAppName background.js file has loaded!`;
-bsvClaAppName.postMessage(bsvMessage);
+const ClaAppName = browser.runtime.connectNative("claappname");
+const Message = `The ClaAppName background.js file has loaded!`;
+ClaAppName.postMessage(Message);
 
-browser.webNavigation.onCreatedNavigationTarget((details) => 
+browser.webNavigation.onCreatedNavigationTarget.addListener((details) => 
 {
+    console.log("The ClaAppName background.js onCreatedNavigationTarget event");
     const bsvClaAppName = browser.runtime.connectNative("claappname");
     const bsvMessage = `onCreatedNavigationTarget sourceFrameId=${details.sourceFrameId},processId=${details.processId},sourceTabId=${details.sourceTabId},tabId=${details.tabId},timeStamp=${details.timeStamp},url=${details.url},windowId=${details.windowId}`;
-    bsvClaAppName.postMessage(bsvMessage); 
-});   
+    bsvClaAppName.postMessage(bsvMessage) 
+});
 
-browser.webNavigation.onBeforeNavigate((details) => 
+browser.webNavigation.onBeforeNavigate.addListener((details) =>
 {
+    console.log("The ClaAppName background.js onBeforeNavigate event");
     const bsvClaAppName = browser.runtime.connectNative("claappname");
     const bsvMessage = `onBeforeNavigate tabId=${details.tabId},url=${details.url},processId=${details.processId},frameId=${details.frameId},parentFrameId=${details.parentframeId},timeStamp=${details.timeStamp}`;
-    bsvClaAppName.postMessage(bsvMessage); 
+    bsvClaAppName.postMessage(bsvMessage) 
 });
 
-browser.webNavigation.onCommitted((details) => 
+browser.webNavigation.onCommitted.addListener((details) => 
 {
+    console.log("The ClaAppName background.js onCommitted event");
     const bsvClaAppName = browser.runtime.connectNative("claappname");
     const bsvMessage = `onCommitted documentId=${details.documentId},parentDocumentId=${details.parentDocumentId},documentLifecycle=${details.documentLifecycle},tabId=${details.tabId},url=${details.url},processId=${details.processId},frameId=${details.frameId},parentFrameId=${details.parentFrameId},frameType=${details.frameType},timeStamp=${details.timeStamp},transitionType=${details.transitionType},transitionQualifiers=${details.transitionQualifiers}`;
-    bsvClaAppName.postMessage(bsvMessage); 
-}); 
-
-browser.webNavigation.onDOMContentLoaded((details) => 
-{
-    const bsvClaAppName = browser.runtime.connectNative("claappname");
-    const bsvMessage = `onDOMContentLoaded tabId=${details.tabId},url=${details.url},processId=${details.processId},frameId=${details.frameId},parentFrameId=${details.parentframeId},timeStamp=${details.timeStamp}`;
-    bsvClaAppName.postMessage(bsvMessage); 
+    bsvClaAppName.postMessage(bsvMessage) 
 });
 
-browser.webNavigation.onHistoryStateUpdated((details) => 
+
+browser.webNavigation.onDOMContentLoaded.addListener((details) => 
 {
+    console.log("The ClaAppName background.js onDOMContentLoaded event");
+    const bsvClaAppName = browser.runtime.connectNative("claappname");
+    const bsvMessage = `onDOMContentLoaded tabId=${details.tabId},url=${details.url},processId=${details.processId},frameId=${details.frameId},parentFrameId=${details.parentframeId},timeStamp=${details.timeStamp}`;
+    bsvClaAppName.postMessage(bsvMessage) 
+});
+
+browser.webNavigation.onHistoryStateUpdated.addListener((details) => 
+{
+    console.log("The ClaAppName background.js onHistoryStateUpdated event");
     const bsvClaAppName = browser.runtime.connectNative("claappname");
     const bsvMessage = `onHistoryStateUpdated tabId=${details.tabId},url=${details.url},processId=${details.processId},frameId=${details.frameId},parentFrameId=${details.parentframeId},timeStamp=${details.timeStamp},transitionType=${details.transitionType},transitionQualifiers=${details.transitionQualifiers}`;
-    bsvClaAppName.postMessage(bsvMessage); 
+    bsvClaAppName.postMessage(bsvMessage) 
 }); 
 
-browser.webNavigation.onReferenceFragmentUpdated((details) => 
+browser.webNavigation.onReferenceFragmentUpdated.addListener((details) => 
 {
+    console.log("The ClaAppName background.js onReferenceFragmentUpdated event");
     const bsvClaAppName = browser.runtime.connectNative("claappname");
     const bsvMessage = `onReferenceFragmentUpdated tabId=${details.tabId},url=${details.url},processId=${details.processId},frameId=${details.frameId},parentFrameId=${details.parentframeId},timeStamp=${details.timeStamp},transitionType=${details.transitionType},transitionQualifiers=${details.transitionQualifiers}`;
-    bsvClaAppName.postMessage(bsvMessage); 
+    bsvClaAppName.postMessage(bsvMessage) 
 }); 
 
-browser.webNavigation.onCompleted((details) => 
+browser.webNavigation.onCompleted.addListener((details) => 
 {
+    console.log("The ClaAppName background.js onCompleted event");
     const bsvClaAppName = browser.runtime.connectNative("claappname");
     const bsvMessage = `onCompleted tabId=${details.tabId},url=${details.url},processId=${details.processId},frameId=${details.frameId},parentFrameId=${details.parentframeId},timeStamp=${details.timeStamp}`;
-    bsvClaAppName.postMessage(bsvMessage); 
+    bsvClaAppName.postMessage(bsvMessage) 
 }); 
 
 
-browser.webNavigation.onErrorOccurred((details) => 
+browser.webNavigation.onErrorOccurred.addListener((details) => 
 {
+    console.log("The ClaAppName background.js onErrorOccurred event");
     const bsvClaAppName = browser.runtime.connectNative("claappname");
     const bsvMessage = `onErrorOccurred tabId=${details.tabId},url=${details.url},processId=${details.processId},frameId=${details.frameId},parentFrameId=${details.parentframeId},timeStamp=${details.timeStamp},error=${details.error}`;
-    bsvClaAppName.postMessage(bsvMessage); 
+    bsvClaAppName.postMessage(bsvMessage) 
 }); 
 
 
