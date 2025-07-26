@@ -189,7 +189,7 @@ A [content script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebE
 
 
 ***                                                                                                                      ***
-*** The Structure or Properties of ```message``` depends entirely on what the Sender includes. There is no fixed schema. ***
+The Structure or Properties of ```message``` depends entirely on what the Sender includes. There is no fixed schema.
 ***                                                                                                                      ***
 
 
