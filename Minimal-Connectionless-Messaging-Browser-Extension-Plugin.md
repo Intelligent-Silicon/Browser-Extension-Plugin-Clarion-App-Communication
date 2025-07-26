@@ -9,7 +9,7 @@ Store the files listed below in a folder for testing purposes. Once uploaded to 
 eg ```c:\MyBrowserExtensionUsingClarion\v1\```
 
 
-    ├── Manifest.json
+    ├── [Manifest.json](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#manifestjson)
         ├── background.js
         ├── content_script.js
         ├── Clarion_AppName.manifest
