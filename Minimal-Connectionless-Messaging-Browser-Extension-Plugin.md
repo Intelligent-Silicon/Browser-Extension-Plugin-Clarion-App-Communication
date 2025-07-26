@@ -79,7 +79,7 @@ A [Background Script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/W
 browser.webNavigation
 ```
 
-```browser.webNavigation``` is a WebExtension API that lets the script monitor and respond to [webNavigation events](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation). Its the Browser level navigation UI, unlike [webRequest](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest) which are event listeners for the lifecycle of events making an HTTP request, which includes websocket requests on ws:// and wss://. 
+```browser.webNavigation``` is a WebExtension API that lets the script monitor and respond to [Firefox](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation) [Chrome](https://developer.chrome.com/docs/extensions/reference/api/webNavigation) [Edge](https://learn.microsoft.com/en-us/microsoft-edge/extensions/developer-guide/api-support) webNavigation events. Its the Browser level navigation UI, unlike [Firefox](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest) [Chrome](https://developer.chrome.com/docs/extensions/reference/api/webRequest) [Edge](https://learn.microsoft.com/en-us/microsoft-edge/extensions/developer-guide/api-support) webRequest which are event listeners for the lifecycle of events making an HTTP request, which includes websocket requests on http://, https://, ftp://, file://, ws://, wss://, and urn:. 
 
 This webNavigation API needs to have the "webNavigation" permission in the manifest.json file.
 
