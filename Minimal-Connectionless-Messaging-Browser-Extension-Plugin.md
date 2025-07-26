@@ -42,7 +42,7 @@ eg ```c:\MyBrowserExtensionUsingClarion\v1\```
 [Edge Manifest.json documentation](https://learn.microsoft.com/en-us/microsoft-edge/extensions/getting-started/manifest-format?tabs=v2)
 
 
-Every Browser Extension Plugin (BEP) needs a manifest.json file. This file contains metadata providing information about your extension like name, version and controls the functionality the browser allows access to with the supplied javascript (and html files).
+Every Browser Extension Plugin (BEP) needs a manifest.json file. This file contains metadata providing information about your extension like name, version and controls the functionality the browser allows access to with the supplied javascript (and any html files).
 
 Minimal Required Information for a manifest.json file:
 
