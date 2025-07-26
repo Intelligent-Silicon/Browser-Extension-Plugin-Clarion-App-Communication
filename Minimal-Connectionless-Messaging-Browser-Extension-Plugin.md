@@ -336,26 +336,29 @@ Manifest URL    moz-extension://{Internal UUID}/manifest.json
 
 
 ### Chrome Temporary Extension
-To load the Browser Extension Plugin for testing and debugging purposes in Firefox.
+To load the Browser Extension Plugin for testing and debugging purposes in Chrome.
 
 First we need to check if Google Chrome will accept V2 manifest.json Browser Extension Plugins.
 ```
-Type 'chrome://policy' into the Omnibox (address box) -> In Chrome Policies search for 'ExtensionManifestV2Availability'. -> If its visible it should have Policy Value = 2.
+Type 'chrome://policy' into the Omnibox (address box) -> In Chrome Policies search for 'ExtensionManifestV2Availability' -> If its visible it should have Policy Value = 2.
 ```
 
-If its not visible or set, run the following command in the Windows Run box, Dos Window or Powershell Window.
+If its not visible or set to 2, run the following command in a Windows Run box, Dos Window or Powershell Window.
 
 ```
 Reg Add "HKLM\SOFTWARE\Policies\Google\Chrome" /v ExtensionManifestV2Availability /t REG_DWORD /d 2 /f
 ``` 
 
-Close and reload Chrome. Repeat the first step and you should now see it visible and set.
+Close and reload Chrome. 
 
+Repeat the first step and you should now see it visible and set to 2.
+
+Load the Browser Extension Plugin for Chrome.
 
 ``` 
 Type 'chrome://extensions' into Omnibox (address box) -> Switch on 'Developer Mode' located in the top right if its not already on -> Click 'Load Unpack' -> Navigate to 'C:\MyBrowserExtensionUsingClarion\v1\' and click 'Select Folder'.
 ```
-ClaAppName should appear underneath 'All Extension'. 
+```ClaAppName``` should appear underneath 'All Extensions'. 
 
 If there are Errors, the red text ```Errors``` button will appear. If you click this, Chrome will show you all the errors that exist and in which file they exist in.
 
