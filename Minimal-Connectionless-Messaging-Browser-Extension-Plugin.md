@@ -287,11 +287,11 @@ Whilst the clarion application manifest file can be located anywhere on the devi
 | Browser | Registry Hive | Registry Setting | User access |
 | --- | --- | --- | --- |
 | Firefox | HKLM | REG ADD "HKLM\Software\Mozilla\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f | All Users |
-| Firefox | HKCU | REG ADD "HKCU\Software\Mozilla\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f | Current Logged in User |
+| Firefox | HKCU | REG ADD "HKCU\Software\Mozilla\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f | Current logged in user |
 | Chrome | HKLM | REG ADD "HKLM\Software\Google\Chrome\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f | All Users |
-| Chrome | HKCU | REG ADD "HKCU\Software\Google\Chrome\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f | Current Logged in User |
+| Chrome | HKCU | REG ADD "HKCU\Software\Google\Chrome\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f | Current logged in user |
 | Edge | HKLM | REG ADD "HKLM\Software\Microsoft\Edge\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f | All Users |
-| Edge | HKCU | REG ADD "HKCU\Software\Microsoft\Edge\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f | Current Logged in User | 
+| Edge | HKCU | REG ADD "HKCU\Software\Microsoft\Edge\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f | Current logged in user | 
 
 HKLM for all users or in HKCU for currently logged in user. 
 
