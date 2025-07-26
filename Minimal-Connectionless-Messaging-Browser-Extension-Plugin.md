@@ -244,9 +244,9 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
 if (message.type === "showPopup") { alert(`User typed or reloaded URL:\n${message.url}\n(Transition: ${message.transitionType})`) }
 ```
   
-Avoid creating multiple ```[browser|Chrome].runtime.onMessage()``` listeners for the same type of message ```if (message.type === "showPopup")``` because the order in which multiple listeners fire is strangely not guaranteed!!! An interesting insight into the working internals.
+Avoid creating multiple ```[browser|Chrome].runtime.onMessage()``` listeners for the same type of message ```if (message.type === "showPopup")``` because the order in which multiple listeners fire is strangely not guaranteed!!! An interesting insight into the working internals of browsers.
 
-So a better way to send messages between background scripts and content scripts is to use [connection-based messaging](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#connection-based_messaging). 
+So a better way to send messages between background scripts and content scripts is to use [connection-based messaging](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#connection-based_messaging) aka [persistent connection messaging](https://github.com/Intelligent-Silicon/Browser-Extension-Plugin-Clarion-App-Communication/tree/main?tab=readme-ov-file#persistent-connection-messaging). 
 
 [Complete Firefox content_script.js file for download](connectionless-messaging/Firefox/content_script.js/content_script.js)
 
