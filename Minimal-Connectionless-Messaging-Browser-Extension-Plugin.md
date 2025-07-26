@@ -300,7 +300,7 @@ The Browsers will scan their respective registry key's ```Firefox [HKLM|HKCU]\So
 
 
 ### Firefox Temporary Extension
-To load the Browser Extension Plugin for testing and debugging purposes.
+To load the Browser Extension Plugin for testing and debugging purposes in Firefox.
 ``` 
 Type 'about:debugging' into Omnibox (address box) -> Click 'This Firefox' -> Click 'Load Temporary Add-on...' -> Navigate to 'C:\MyBrowserExtensionUsingClarion\v1\' and select 'manifest.json'.
 ```
@@ -329,13 +329,38 @@ Internal UUID   {GUID}
 Manifest URL    moz-extension://{Internal UUID}/manifest.json
 ```
 
-When you then carryout any function in Firefox, you will see the ClaAppName.exe messagebox appear showing you the message: 'Glo:CurrentPID = \<PID\>'. 
-If the message box doesnt appear when you open a new tab or navigate to a webpage, then the ClaAppName app isnt being loaded properly.
+
+
+### Chrome Temporary Extension
+
+### Edge Temporary Extension
+
+edge://extensions/
+
+### Extension Testing and Debugging
+
+When you carryout any function in the browser, you should see the ClaAppName.exe messagebox appear showing you the message: 'Glo:CurrentPID = \<PID\>'.
+ 
+IF the ClaAppName.exe message box doesnt appear when you open a new tab or navigate to a webpage, then ClaAppName.exe isnt being loaded properly. Time to double check.
 
 The Browser Extension Plugin is now ready for testing.
 
+TIP: To test the background.js script, click the ```about:debugging#/runtime/this-firefox``` ```Inspect``` button, a new window will appear which positions to the console tab, where you can see the ```background.js``` script has loaded and if the code from the beginning of ```background.js``` (seen below) has not been block-commented out ```/*``` ```*/```, will attempt to load ClaAppName.exe and send a message to it. 
 
-TIP: If you end up reading messages into ClaAppName and they are just 4 bytes in size, its a good time to close the Browser and reload it and reload the Browser Extension Plugin because Firefox has become unstable.
+```
+/*
+const ClaAppName = browser.runtime.connectNative("ClaAppName");
+const Message = `The ClaAppName background.js file has loaded!`;
+ClaAppName.postMessage(Message);
+*/
+``` 
+
+This is a quick way for testing everything is setup properly.
+
+
+TIP: If you end up reading messages into ClaAppName and they are just 4 bytes in size, there is Clarion code to test and Return with errorcode for this situation, its a good time to close the Browser and reload it and then reload the Browser Extension Plugin again because the browser may have become unstable.
+
+TIP: If you should end up with loads of message boxes showing the ProcessID for the ClaAppName.exe, simply unload the manifest.json file and this will kill all instances of ClaAppName.exe and their message boxes in one go without having to click OK to acknowledge each message, but only do this after you have performed your debugging operation.
 
 
 ### Clarion Debugger
@@ -344,7 +369,7 @@ Use the method below to learn how to step in to the running ClaNameApp app after
 
 [Call-Clarion-Debugger-from-running-App](https://github.com/Intelligent-Silicon/Call-Clarion-Debugger-from-running-App)
 
-If you are using the ```Message('Glo:CurrentPID = ' & Glo:CurrentPID)``` to act as a psuedo breakpoint, clicking the ```reload``` button seen in the Firefox ```about:debugging``` window, will trigger a reload of the ```manifest.json``` file, and the ```background.js``` file which will then call the ```ClaNameApp``` app. This can be useful with getting familar with the process. When ready comment the javascript code out using ```/*``` and ```*/``` as seen below.
+If you are using the ```Message('Glo:CurrentPID = ' & Glo:CurrentPID)``` to act as a psuedo breakpoint, clicking the ```reload``` button seen in the Firefox ```about:debugging``` window, will trigger a reload of the ```manifest.json``` file, and the ```background.js``` file which will then call the ```ClaNameApp``` app. This can be useful with getting familar with the process. When ready, comment the javascript code out using ```/*``` and ```*/``` as seen below.
 
 ```
 /*
@@ -354,4 +379,4 @@ ClaAppName.postMessage(Message);
 */
 ```
 
-Tip. If you should end up with loads of message boxes showing the ProcessID for the ClaAppName, simply unload the manifest.json file and this will kill all the message boxes in one go, but only do this after you have performed your debugging operation.
+
