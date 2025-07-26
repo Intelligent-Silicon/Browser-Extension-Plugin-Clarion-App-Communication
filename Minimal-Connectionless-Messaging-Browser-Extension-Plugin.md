@@ -64,8 +64,11 @@ Additional Required Information for a Clarion app to use NativeCommunication aka
 | Firefox Only [applications](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/browser_specific_settings) | guid:{0339088b-ba1a-44dd-baee-da8de84e222d} or name@domainname | "applications" is now deprecated and replaced by "browser_specific_settings" shown above. |
 
 [Complete Firefox manifest.json using application name@domain file for download](connectionless-messaging/Firefox/manifest.json/applications/name/manifest.json)
+
 [Complete Firefox manifest.json using application {guid} file for download](connectionless-messaging/Firefox/manifest.json/applications/guid/manifest.json)
+
 [Complete Firefox manifest.json using browser_specific_settings name@domain file for download](connectionless-messaging/Firefox/manifest.json/browser_specific_settings/name/manifest.json)
+
 [Complete Firefox manifest.json using browser_specific_settings {guid} file for download](connectionless-messaging/Firefox/manifest.json/browser_specific_settings/guid/manifest.json)
 
 ### background.js
