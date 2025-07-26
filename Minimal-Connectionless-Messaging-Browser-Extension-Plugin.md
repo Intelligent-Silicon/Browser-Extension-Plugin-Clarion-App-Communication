@@ -86,7 +86,7 @@ WEA's require permissions to be set in the ```manifest.json``` file to access th
 This WEA:webNavigation API needs to have the "webNavigation" permission in the manifest.json file.
 
 
-The lifecycle of webNavigation events in order....
+The Firefox lifecycle of browser.webNavigation events in order....
 ```
 browser.webNavigation.onCreatedNavigationTarget // Fired when a new tab or window is created for navigation.
 browser.webNavigation.onBeforeNavigate // Fired before navigation starts.
