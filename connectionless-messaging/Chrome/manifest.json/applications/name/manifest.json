@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "ClaAppName",
+  "version": "1.0",
+  "description": "Recieves WebNavigation Events",
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "permissions": [
+    "tabs",
+    "webNavigation",
+    "nativeMessaging",
+    "<all_urls>"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"]
+    }
+  ],
+  
+  "applications": {
+    "gecko": {
+    "id": "ClaAppName@IntelligentSilicon"
+    }
+  }
+}
