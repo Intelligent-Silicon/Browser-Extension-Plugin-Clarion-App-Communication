@@ -33,6 +33,8 @@ eg ```c:\MyBrowserExtensionUsingClarion\v1\```
 
 [Edge Temporary Extension](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#edge-temporary-extension)
 
+[Browser Extension Plugin Testing and Debugging](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#extension-testing-and-debugging)
+
 [Clarion Debugger](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#clarion-debugger)
 
 
@@ -389,7 +391,7 @@ Source                      Unpacked extension
 
 edge://extensions/
 
-### Extension Testing and Debugging
+### Browser Extension Plugin Testing and Debugging
 
 When you carryout any function in the browser, you should see the ClaAppName.exe messagebox appear showing you the message: 'Glo:CurrentPID = \<PID\>'. This is because its being called for every event being trapped.
  
