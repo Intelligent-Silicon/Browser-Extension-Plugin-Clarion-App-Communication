@@ -80,6 +80,8 @@ Additional Required Information for a Clarion app to use NativeCommunication aka
 
 [Complete Firefox manifest.json file using browser_specific_settings {guid} for download](connectionless-messaging/Firefox/manifest.json/browser_specific_settings/guid/manifest.json)
 
+[Complete Chrome manifest.json file for download](connectionless-messaging/Chrome/manifest.json)
+
 ### background.js
 A [Background Script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts) lets you monitor and respond to events in the context of the Browser using the [Firefox](https://extensionworkshop.com/documentation/develop/about-the-webextensions-api/) [Chrome](https://developer.chrome.com/docs/extensions/reference/api) [Edge](https://learn.microsoft.com/en-us/microsoft-edge/extensions/developer-guide/api-support) Web Extension API's (WEA) like navigating to a web page (WEA:webNavigation), modifying a bookmark (WEA:bookmarks) or opening a new tab (WEA:tabs). 
 
@@ -182,6 +184,8 @@ browser.webNavigation.onBeforeNavigate.addListener((details) =>
 
 [Complete Firefox Background.js file for download](connectionless-messaging/Firefox/background.js/background.js)
 
+[Complete Chrome Background.js file for download](connectionless-messaging/Chrome/background.js/background.js)
+
 ### content_script.js
 A [content script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#connection-based_messaging) lets you monitor and respond to events in the context of a web page using the Web Extension APIs. Content scripts are similar to website/webpage scripts loaded using the <script> element, but require permissions to be set in the ```manifest.json``` file to access the website/webpage content.
 
@@ -258,6 +262,8 @@ So a better way to send messages between background scripts and content scripts 
 
 [Complete Firefox content_script.js file for download](connectionless-messaging/Firefox/content_script.js/content_script.js)
 
+[Complete Chrome content_script.js file for download](connectionless-messaging/Chrome/content_script.js/content_script.js)
+
 
 ### Clarion_AppName.manifest
 
@@ -280,6 +286,8 @@ The manifest file provides additional information controlling how the ```ClaAppN
 [Complete Firefox ClaAppName.manifest file using name@domain for download](connectionless-messaging/Firefox/ClaAppName.manifest/name/ClaAppName.manifest)
 
 [Complete Firefox ClaAppName.manifest file using {guid} for download](connectionless-messaging/Firefox/ClaAppName.manifest/guid/ClaAppName.manifest)
+
+[Complete Chrome ClaAppName.manifest file for download](connectionless-messaging/Chrome/ClaAppName.manifest/ClaAppName.manifest)
 
 ### ClaAppName.exe
 

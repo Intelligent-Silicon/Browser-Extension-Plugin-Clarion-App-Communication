@@ -1,7 +1,0 @@
-{
-  "name": "ClaAppName",
-  "description": "Browser Extension Plugin for ClaAppName using {Guid}",
-  "path": "C:\\MyBrowserExtensionUsingClarion\\v1\\ClaAppName.exe",
-  "type": "stdio",
-  "allowed_extensions": ["{0339088b-ba1a-44dd-baee-da8de84e222d}"]
-}

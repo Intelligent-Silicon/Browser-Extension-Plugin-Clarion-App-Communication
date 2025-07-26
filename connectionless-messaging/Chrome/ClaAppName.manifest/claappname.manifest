@@ -1,0 +1,10 @@
+{
+  "name": "claappname",
+  "description": "Browser Extension Plugin for ClaAppName",
+  "path": "C:\\MyBrowserExtensionUsingClarion\\v1\\claappname.exe",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://ikecfikbakkedbemajecjmbadnabofel/"
+  ]
+
+}
