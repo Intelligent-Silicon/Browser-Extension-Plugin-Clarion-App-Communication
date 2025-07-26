@@ -165,7 +165,7 @@ BSV.postMessage()
 ```
 browser.webNavigation.onBeforeNavigate.addListener((details) => 
     {
-    const MyBlockScopedInitialisedVariable = browser.runtime.connectNative("Clarion_AppName"); // "Clarion_AppName" must match "Clarion_AppName.manifest" and "Clarion_Appname.exe" found in the "c:\MyBrowserExtensionForClarion\v1\" folder.
+    const MyBlockScopedInitialisedVariable = browser.runtime.connectNative("Clarion_AppName"); // "Clarion_AppName" must match "Clarion_AppName.manifest" aka ClaAppName.manifest and "Clarion_Appname.exe" aka ClaAppName.exe found in the "c:\MyBrowserExtensionForClarion\v1\" folder.
     const MyMessageSentToClarionApp = `onBeforeNavigate ${details.tabId},${details.url},${details.processId},${details.frameId},,${details.parentframeId}, ${details.timeStamp}`;
     MyBlockScopedInitialisedVariable.postMessage(MyMessageSentToClarionApp); // A raw string which is serialized using JSON, UTF-8 encoded and is preceded with an unsigned 32-bit value containing the message length in native byte order. '[Ulong][UTF-8 String]'
     }
