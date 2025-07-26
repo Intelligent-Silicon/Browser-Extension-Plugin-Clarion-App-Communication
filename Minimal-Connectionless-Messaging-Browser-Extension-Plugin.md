@@ -29,6 +29,8 @@ eg ```c:\MyBrowserExtensionUsingClarion\v1\```
 
 [Firefox Temporary Extension](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#firefox-temporary-extension)
 
+[Chrome Enable ExtensionManifestV2Availability](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#chrome-enable-extensionmanifestv2availability)
+
 [Chrome Temporary Extension](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#chrome-temporary-extension)
 
 [Edge Temporary Extension](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#edge-temporary-extension)
