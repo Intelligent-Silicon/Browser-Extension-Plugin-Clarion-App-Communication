@@ -315,7 +315,7 @@ Using ```name@domain``` as the ```manifest.json applications:gecko:id``` which n
 ```
 ClaAppName
 Location        C:/MyBrowserExtensionUsingClarion/v1/
-Extension ID    0339088b-ba1a-44dd-baee-da8de84e222d@intelligentsilicon
+Extension ID    ClaAppName@IntelligentSilicon
 Internal UUID   {GUID}
 Manifest URL    moz-extension://{Internal UUID}/manifest.json
 ```
