@@ -178,14 +178,14 @@ browser.webNavigation.onBeforeNavigate.addListener((details) =>
 A [content script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#connection-based_messaging) lets you monitor and respond to events in the context of a web page using the Web Extension APIs. Content scripts are similar to website/webpage scripts loaded using the <script> element, but require permissions to be set in the ```manifest.json``` file to access the website/webpage content.
 
 ```
-browser.runtime
+[browser|Chrome].runtime
 ```
-```browser.runtime``` provides information about your extension and the environment it's running on. Messaging APIs enabling you to communicate between different parts of your extension, other extensions and native applications.
+```[browser|Chrome].runtime``` provides information about your extension and the environment it's running on. Messaging APIs enabling you to communicate between different parts of your extension, other extensions and native applications.
 
 ```
-.onMessage
+[browser|Chrome].runtime.onMessage
 ```
-```onMessage``` is an event for listening to the Payload Object sent using [runtime.sendMessage()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendMessage) or [tabs.sendMessage()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/sendMessage) from another part of (your) extension(s) or native application. eg listening for messages from a ```background.js``` and vice versa, or an [options page or popup](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Anatomy_of_a_WebExtension#sidebars_popups_and_options_pages).
+```[browser|Chrome].runtime.onMessage``` is an event for listening to the Payload Object sent using [[browser|Chrome].runtime.sendMessage()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendMessage) or [[browser|Chrome].runtime.tabs.sendMessage()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/sendMessage) from another part of (your) extension(s) or native application. eg listening for messages from a ```background.js``` and vice versa, or an [options page or popup](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Anatomy_of_a_WebExtension#sidebars_popups_and_options_pages).
 
 
 The Structure or Properties of ```message``` depends entirely on what the sender includes. There is no fixed schema. x1
