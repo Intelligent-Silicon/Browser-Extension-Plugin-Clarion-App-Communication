@@ -293,7 +293,7 @@ Whilst the clarion application manifest file can be located anywhere on the devi
 | Edge | HKLM | REG ADD "HKLM\Software\Microsoft\Edge\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f | All Users |
 | Edge | HKCU | REG ADD "HKCU\Software\Microsoft\Edge\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f | Current logged in user | 
 
-HKLM for all users or in HKCU for currently logged in user. 
+HKLM for all users or HKCU for currently logged in user. 
 
 The Browsers will scan their respective registry key's ```Firefox [HKLM|HKCU]\Software\Mozilla\NativeMessagingHosts```, ```Chrome [HKLM|HKCU]\Software\Google\Chrome\NativeMessagingHosts``` and ```Edge [HKLM|HKCU]\Software\Microsoft\Edge\NativeMessagingHosts``` looking for the Clarion app manifest file and link the ```ClaAppName.manifest allowed_extension``` to the ```manifest.json applications or browser_specific_setting``` entries.
 
@@ -329,13 +329,15 @@ Internal UUID   {GUID}
 Manifest URL    moz-extension://{Internal UUID}/manifest.json
 ```
 
-When you then carryout any function in Firefox, you will see the Clarion messagebox appear showing you the message: 'Glo:CurrentPID = <PID>'. 
+When you then carryout any function in Firefox, you will see the ClaAppName.exe messagebox appear showing you the message: 'Glo:CurrentPID = <PID>'. 
 If the message box doesnt appear when you open a new tab or navigate to a webpage, then the ClaAppName app isnt being loaded properly.
 
-The BEP is now ready for testing.
+The Browser Extension Plugin is now ready for testing.
 
 
-If you end up reading messages into ClaAppName and they are just 4 bytes in size, its a good time to close the Browser and reload it and reload the Browser Extension Plugin because Firefox has become unstable.
+TIP: If you end up reading messages into ClaAppName and they are just 4 bytes in size, its a good time to close the Browser and reload it and reload the Browser Extension Plugin because Firefox has become unstable.
+
+
 ### Clarion Debugger
 
 Use the method below to learn how to step in to the running ClaNameApp app after its been called by the Web Browser via the plugins.
