@@ -64,13 +64,13 @@ Additional Required Information for a Clarion app to use NativeCommunication aka
 | [browser_specific_settings](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/browser_specific_settings) (Firefox only) | guid:{0339088b-ba1a-44dd-baee-da8de84e222d} or name@domainname | must either match the pattern ```/^\{[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\}$/i``` or ```/^[a-z0-9-._]*@[a-z0-9-._]+$/i```. |
 
 
-[Complete Firefox manifest.json using applications name@domain file for download](connectionless-messaging/Firefox/manifest.json/applications/name/manifest.json)
+[Complete Firefox manifest.json file using applications name@domain for download](connectionless-messaging/Firefox/manifest.json/applications/name/manifest.json)
 
-[Complete Firefox manifest.json using applications {guid} file for download](connectionless-messaging/Firefox/manifest.json/applications/guid/manifest.json)
+[Complete Firefox manifest.json file using applications {guid} for download](connectionless-messaging/Firefox/manifest.json/applications/guid/manifest.json)
 
-[Complete Firefox manifest.json using browser_specific_settings name@domain file for download](connectionless-messaging/Firefox/manifest.json/browser_specific_settings/name/manifest.json)
+[Complete Firefox manifest.json file using browser_specific_settings name@domain for download](connectionless-messaging/Firefox/manifest.json/browser_specific_settings/name/manifest.json)
 
-[Complete Firefox manifest.json using browser_specific_settings {guid} file for download](connectionless-messaging/Firefox/manifest.json/browser_specific_settings/guid/manifest.json)
+[Complete Firefox manifest.json file using browser_specific_settings {guid} for download](connectionless-messaging/Firefox/manifest.json/browser_specific_settings/guid/manifest.json)
 
 ### background.js
 A [Background Script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts) lets you monitor and respond to events in the context of the Browser using the [Firefox](https://extensionworkshop.com/documentation/develop/about-the-webextensions-api/) [Chrome](https://developer.chrome.com/docs/extensions/reference/api) [Edge](https://learn.microsoft.com/en-us/microsoft-edge/extensions/developer-guide/api-support) Web Extension API's (WEA) like navigating to a web page (WEA:webNavigation), modifying a bookmark (WEA:bookmarks) or opening a new tab (WEA:tabs). 
