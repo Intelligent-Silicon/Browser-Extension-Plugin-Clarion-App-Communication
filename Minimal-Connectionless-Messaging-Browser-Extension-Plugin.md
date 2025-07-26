@@ -33,7 +33,7 @@ eg ```c:\MyBrowserExtensionUsingClarion\v1\```
 
 [Edge Temporary Extension](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#edge-temporary-extension)
 
-[Browser Extension Plugin Testing and Debugging](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#extension-testing-and-debugging)
+[Browser Extension Plugin Testing and Debugging](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#browser-extension-plugin-testing-and-debugging)
 
 [Clarion Debugger](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#clarion-debugger)
 
