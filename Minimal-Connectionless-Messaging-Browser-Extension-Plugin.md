@@ -270,6 +270,7 @@ The manifest file provides additional information controlling how the ```ClaAppN
 
 
 [Complete Firefox ClaAppName.manifest file for download using name@domain](connectionless-messaging/Firefox/name/ClaAppName.manifest)
+
 [Complete Firefox ClaAppName.manifest file for download using {Guid}](connectionless-messaging/Firefox/guid/ClaAppName.manifest)
 
 ### ClaAppName.exe
