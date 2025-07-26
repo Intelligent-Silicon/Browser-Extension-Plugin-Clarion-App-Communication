@@ -329,7 +329,7 @@ Internal UUID   {GUID}
 Manifest URL    moz-extension://{Internal UUID}/manifest.json
 ```
 
-When you then carryout any function in Firefox, you will see the ClaAppName.exe messagebox appear showing you the message: 'Glo:CurrentPID = <PID>'. 
+When you then carryout any function in Firefox, you will see the ClaAppName.exe messagebox appear showing you the message: 'Glo:CurrentPID = \<PID\>'. 
 If the message box doesnt appear when you open a new tab or navigate to a webpage, then the ClaAppName app isnt being loaded properly.
 
 The Browser Extension Plugin is now ready for testing.
