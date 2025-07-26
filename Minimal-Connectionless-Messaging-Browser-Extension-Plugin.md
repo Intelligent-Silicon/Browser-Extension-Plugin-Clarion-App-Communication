@@ -111,6 +111,7 @@ Functions which can be added to the above WEA:webNavigation events.
 ```
 
 ```listener``` is the object name that receives the ```details``` object properties linked to the WEA:WebNavigation when its events fire.
+
 ```filter``` is an object that restricts the listener to specific URLs or patterns. eg defined before the WEA:WebNavigation event listener, this will trigger only when pages from 'example.com' or domains starting with 'developer' match the WEA:webNavigation event function listener.
 
 ```
