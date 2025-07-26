@@ -103,15 +103,15 @@ browser.webNavigation.onCompleted // Fired when a document, including the resour
 browser.webNavigation.onErrorOccurred // Fired at any time during the webNavigation lifecycle of events when an error occurs.
 ```
 
-Functions which can be added to the above webNavigation events.
+Functions which can be added to the above WEA:webNavigation events.
 ```
 .addListener(listener,filter) ! Adds a listener to this event.
 .removeListener(listener,filter) ! Stop listening to this event. The listener argument is the listener to remove.
 .hasListener(listener,filter) ! Check whether listener is registered for this event. Returns true if it is listening, false otherwise.
 ```
 
-```listener``` is the object name that receives the ```details``` object properties linked to the Web Extension api WebNavigation when the event fires.
-```filter``` is an object that restricts the listener to specific URLs or patterns. eg defined before the WebNavigation event listener, this will trigger only when pages from 'example.com' or domains starting with 'developer' match the webNavigation event function listener.
+```listener``` is the object name that receives the ```details``` object properties linked to the WEA:WebNavigation when its events fire.
+```filter``` is an object that restricts the listener to specific URLs or patterns. eg defined before the WEA:WebNavigation event listener, this will trigger only when pages from 'example.com' or domains starting with 'developer' match the WEA:webNavigation event function listener.
 
 ```
 const filter = {
