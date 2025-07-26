@@ -29,6 +29,10 @@ eg ```c:\MyBrowserExtensionUsingClarion\v1\```
 
 [Firefox Temporary Extension](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#firefox-temporary-extension)
 
+[Chrome Temporary Extension](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#chrome-temporary-extension)
+
+[Edge Temporary Extension](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#edge-temporary-extension)
+
 [Clarion Debugger](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#clarion-debugger)
 
 
