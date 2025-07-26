@@ -253,7 +253,7 @@ So a better way to send messages between background scripts and content scripts 
 
 ### Clarion_AppName.manifest
 
-This is whats called an [App manifest file](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_messaging#app_manifest). It needs to be installed alongside the Clarion app exe and match the name of the exe. eg ```ClaAppName.manifest``` must match ```ClaAppName.exe```.
+This is whats called an [App manifest file](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_messaging#app_manifest) [Chrome Native Messaging Host manifest file](https://developer.chrome.com/docs/extensions/develop/concepts/native-messaging#native-messaging-host) [Edge Native Messaging Host manifest file](https://learn.microsoft.com/en-us/microsoft-edge/extensions/developer-guide/native-messaging?tabs=v3%2Cwindows#step-2-create-your-native-messaging-host-manifest-file). It needs to be installed alongside the Clarion app exe and match the name of the exe. eg ```ClaAppName.manifest``` must match ```ClaAppName.exe```.
 The manifest file provides additional information controlling how the ClaAppName.exe communicates with the Browser. Without it, the Browser can not communicate with the Clarion app.
 
 
