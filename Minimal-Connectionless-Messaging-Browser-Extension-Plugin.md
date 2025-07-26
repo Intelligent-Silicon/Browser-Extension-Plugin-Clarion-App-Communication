@@ -262,7 +262,7 @@ The manifest file provides additional information controlling how the ```ClaAppN
 
 | Element | Value | Description |
 | --- | --- | --- |
-| [Name](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String | Name of the Clarion application Exe file "ClaAppName" which must match the name passed into runtime.connectNative() or runtime.sendNativeMessage() by the extension. |
+| [Name](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String | Name of the Clarion app Exe file "ClaAppName" which must match the name passed into runtime.connectNative() or runtime.sendNativeMessage() by the extension. |
 | [Description](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String | Description of the native application. |
 | [Path](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String | Path to the native application, relative to the ```ClaAppName.manifest``` file. |
 | [Type](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String | Takes the value "stdio" only, which indicates that messages are received by the Clarion app using [Console window](https://learn.microsoft.com/en-us/windows/console/consoles) or [Anonymous Pipes](https://learn.microsoft.com/en-us/windows/win32/procthread/creating-a-child-process-with-redirected-input-and-output) standard input (stdin) and sent using standard output (stdout). |
