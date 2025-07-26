@@ -88,15 +88,15 @@ This WEA:webNavigation API needs to have the "webNavigation" permission in the m
 
 The lifecycle of webNavigation events in order....
 ```
-browser.webNavigation.onCreatedNavigationTarget ! Fired when a new tab or window is created for navigation.
-browser.webNavigation.onBeforeNavigate ! Fired before navigation starts.
-browser.webNavigation.onCommitted ! Fired when the browser commits to loading a new document.
-browser.webNavigation.onDOMContentLoaded ! Fired when the document is loaded and parsed, and the DOM (Document Object Model) is fully constructed, but linked resources such as images, stylesheets and subframes may not yet be loaded.
-browser.webNavigation.onHistoryStateUpdated ! Fired when the page used the history API to update the URL displayed in the browser's location bar. 
-browser.webNavigation.onReferenceFragmentUpdated ! Fired if the fragment identifier for a page is changed. For example, if a page implements a table of contents using fragments, and the user clicks an entry in the table of contents, this event fires.
-browser.webNavigation.onCompleted ! Fired when a document, including the resources it refers to, is completely loaded and initialized.
+browser.webNavigation.onCreatedNavigationTarget // Fired when a new tab or window is created for navigation.
+browser.webNavigation.onBeforeNavigate // Fired before navigation starts.
+browser.webNavigation.onCommitted // Fired when the browser commits to loading a new document.
+browser.webNavigation.onDOMContentLoaded // Fired when the document is loaded and parsed, and the DOM (Document Object Model) is fully constructed, but linked resources such as images, stylesheets and subframes may not yet be loaded.
+browser.webNavigation.onHistoryStateUpdated // Fired when the page used the history API to update the URL displayed in the browser's location bar. 
+browser.webNavigation.onReferenceFragmentUpdated // Fired if the fragment identifier for a page is changed. For example, if a page implements a table of contents using fragments, and the user clicks an entry in the table of contents, this event fires.
+browser.webNavigation.onCompleted // Fired when a document, including the resources it refers to, is completely loaded and initialized.
 
-browser.webNavigation.onErrorOccurred ! Fired at any time during the webNavigation lifecycle of events when an error occurs.
+browser.webNavigation.onErrorOccurred // Fired at any time during the webNavigation lifecycle of events when an error occurs.
 ```
 
 Functions which can be added to the above webNavigation events.
