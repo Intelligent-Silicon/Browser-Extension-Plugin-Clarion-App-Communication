@@ -276,6 +276,7 @@ The manifest file provides additional information controlling how the ```ClaAppN
 ### ClaAppName.exe
 
 [Complete ClaAppName.clw using allocConsole for download](connectionless-messaging/Firefox/ClaAppName.exe/allocConsole/ClaAppName.clw)
+
 [Complete ClaAppName.clw using Anonymous Pipes for download](connectionless-messaging/Firefox/ClaAppName.exe/pipes/ClaAppName.clw)
 
 ```
