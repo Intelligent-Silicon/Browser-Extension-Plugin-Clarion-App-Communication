@@ -269,9 +269,9 @@ The manifest file provides additional information controlling how the ```ClaAppN
 | [allowed_extensions](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String Array | An array of Browser Extension [add-on ID's](https://extensionworkshop.com/documentation/develop/extensions-and-the-add-on-id/) defined in ```browser_specific_settings``` in the ```manifest.json``` for the Browser Extension Plugin. |
 
 
-[Complete Firefox ClaAppName.manifest file for download using name@domain](connectionless-messaging/Firefox/name/ClaAppName.manifest)
+[Complete Firefox ClaAppName.manifest file using name@domain for download](connectionless-messaging/Firefox/ClaAppName.manifest/name/ClaAppName.manifest)
 
-[Complete Firefox ClaAppName.manifest file for download using {Guid}](connectionless-messaging/Firefox/guid/ClaAppName.manifest)
+[Complete Firefox ClaAppName.manifest file using {guid} for download](connectionless-messaging/Firefox/ClaAppName.manifest/guid/ClaAppName.manifest)
 
 ### ClaAppName.exe
 
