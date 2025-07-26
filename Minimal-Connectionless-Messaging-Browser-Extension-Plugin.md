@@ -295,7 +295,7 @@ Whilst the clarion application manifest file can be located anywhere on the devi
 
 HKLM for all users or HKCU for currently logged in user. 
 
-The Browsers will scan their respective registry key's ```Firefox [HKLM|HKCU]\Software\Mozilla\NativeMessagingHosts```, ```Chrome [HKLM|HKCU]\Software\Google\Chrome\NativeMessagingHosts``` and ```Edge [HKLM|HKCU]\Software\Microsoft\Edge\NativeMessagingHosts``` looking for the Clarion app manifest file and link the ```ClaAppName.manifest``` ```allowed_extension``` to the ```manifest.json``` ```applications or ```browser_specific_setting``` entries.
+The Browsers will scan their respective registry key's ```Firefox [HKLM|HKCU]\Software\Mozilla\NativeMessagingHosts```, ```Chrome [HKLM|HKCU]\Software\Google\Chrome\NativeMessagingHosts``` and ```Edge [HKLM|HKCU]\Software\Microsoft\Edge\NativeMessagingHosts``` looking for the Clarion app manifest file and link the ```ClaAppName.manifest``` ```allowed_extension``` to the ```manifest.json``` ```applications``` or ```browser_specific_setting``` entries.
 
 
 
