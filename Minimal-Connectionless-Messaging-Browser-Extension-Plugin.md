@@ -358,7 +358,7 @@ ClaAppName.postMessage(Message);
 This is a quick way for testing everything is setup properly.
 
 
-TIP: If you end up reading messages into ClaAppName and they are just 4 bytes in size, there is Clarion code to test and Return with errorcode for this situation, its a good time to close the Browser and reload it and then reload the Browser Extension Plugin again because the browser may have become unstable.
+TIP: If you end up reading messages into ClaAppName.exe and they are just 4 bytes in size, there is Clarion code to test and Return with errorcode for this situation, its a good time to close the Browser and reload it and then reload the Browser Extension Plugin again because the browser may have become unstable.
 
 TIP: If you should end up with loads of message boxes showing the ProcessID for the ClaAppName.exe, simply unload the manifest.json file and this will kill all instances of ClaAppName.exe and their message boxes in one go without having to click OK to acknowledge each message, but only do this after you have performed your debugging operation.
 
