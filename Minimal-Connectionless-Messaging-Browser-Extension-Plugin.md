@@ -201,7 +201,7 @@ The properties sent from different Methods that send to ```[browser|Chrome].runt
 | extensionId | String | If extensionId is omitted, the message is sent to your extension. The ID of the extension to send the message to. Include this to send the message to a different extension. |
 | message | Any | An object that can be a [structured clone serialized](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Chrome_incompatibilities#data_cloning_algorithm) |
 | options | Object | |
-| includeTlsChannelId | Boolean | The TLS channel ID passed into runtime.onMessageExternal for processes that are listening for the connection event. |
+| includeTlsChannelId | Boolean | The TLS channel ID passed into ```runtime.onMessageExternal``` for processes that are listening for the connection event. |
 
 [tabs.sendMessage()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/sendMessage)
 | Parameter | Data Type | Notes |
