@@ -1,6 +1,6 @@
 # Minimal-Connectionless-Messaging-Browser-Extension-Plugin
 
-A Minimal example of a Connectionless Messaging Browser Extension Plugin.
+A Minimal example of a Connectionless Messaging Browser Extension Plugin and step-through for Firefox, Google Chrome & Microsoft Edge.
 
 ### Browser Extension Plugin Files
 
