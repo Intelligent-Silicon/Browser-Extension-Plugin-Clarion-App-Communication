@@ -188,9 +188,9 @@ A [content script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebE
 ```[browser|Chrome].runtime.onMessage``` is an event for listening to the Payload Object sent using [[browser|Chrome].runtime.sendMessage()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendMessage) or [[browser|Chrome].tabs.sendMessage()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/sendMessage) from another part of (your) extension(s) or native application. eg listening for messages from a ```background.js``` and vice versa, or an [options page or popup](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Anatomy_of_a_WebExtension#sidebars_popups_and_options_pages).
 
 
-
+***                                                                                                                      ***
 *** The Structure or Properties of ```message``` depends entirely on what the Sender includes. There is no fixed schema. ***
-
+***                                                                                                                      ***
 
 
 The properties sent from different Methods that send to ```[browser|Chrome].runtime.onMessage```.
