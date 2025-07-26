@@ -358,10 +358,6 @@ Repeat the first step and you should now see ```ExtensionManifestV2Availability`
 ### Chrome Temporary Extension
 To load the Browser Extension Plugin for testing and debugging purposes in Chrome.
 
-
-
-Load the Browser Extension Plugin for Chrome.
-
 ``` 
 Type 'chrome://extensions' into Omnibox (address box) -> Switch on 'Developer Mode' located in the top right if its not already on -> Click 'Load Unpack' -> Navigate to 'C:\MyBrowserExtensionUsingClarion\v1\' and click 'Select Folder'.
 ```
