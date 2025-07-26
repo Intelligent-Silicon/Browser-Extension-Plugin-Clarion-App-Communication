@@ -9,11 +9,28 @@ Store the files listed below in a folder for testing purposes. Once uploaded to 
 eg ```c:\MyBrowserExtensionUsingClarion\v1\```
 
 
-    ├── [Manifest.json](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#manifestjson)
+    ├── Manifest.json
         ├── background.js
         ├── content_script.js
         ├── Clarion_AppName.manifest
         ├── Clarion_AppName.exe
+
+[Manifest.json](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#manifestjson)
+
+[background.js](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#backgroundjs)
+
+[content_script.js](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#content_scriptjs)
+
+[Clarion_AppName.manifest](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#clarion_appnamemanifest)
+
+[Clarion_AppName.exe](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#clarion_appnameexe)
+
+[Windows Registry](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#windows-registry)
+
+[Firefox Temporary Extension](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#firefox-temporary-extension)
+
+[Clarion Debugger](Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#clarion-debugger)
+
 
 
 To load the Browser Extension Plugin for testing purposes.
