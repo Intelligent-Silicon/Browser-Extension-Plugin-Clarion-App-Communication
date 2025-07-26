@@ -335,17 +335,14 @@ Internal UUID   {GUID}
 Manifest URL    moz-extension://{Internal UUID}/manifest.json
 ```
 
+### Chrome Enable ExtensionManifestV2Availability
+To check if Google Chrome will accept V2 manifest.json Browser Extension Plugins.
 
-
-### Chrome Temporary Extension
-To load the Browser Extension Plugin for testing and debugging purposes in Chrome.
-
-First we need to check if Google Chrome will accept V2 manifest.json Browser Extension Plugins.
 ```
 Type 'chrome://policy' into the Omnibox (address box) -> In Chrome Policies search for 'ExtensionManifestV2Availability' -> If its visible it should have Policy Value = 2.
 ```
 
-If its not visible or set to 2, run the following command in a Windows Run box, Dos Window or Powershell Window.
+If its not visible or set to ```2```, run the following command in a Windows Run box, Dos Window or Powershell Window.
 
 ```
 Reg Add "HKLM\SOFTWARE\Policies\Google\Chrome" /v ExtensionManifestV2Availability /t REG_DWORD /d 2 /f
@@ -353,7 +350,13 @@ Reg Add "HKLM\SOFTWARE\Policies\Google\Chrome" /v ExtensionManifestV2Availabilit
 
 Close and reload Chrome. 
 
-Repeat the first step and you should now see it visible and set to 2.
+Repeat the first step and you should now see ```ExtensionManifestV2Availability``` visible and set to ```2```.
+
+
+### Chrome Temporary Extension
+To load the Browser Extension Plugin for testing and debugging purposes in Chrome.
+
+
 
 Load the Browser Extension Plugin for Chrome.
 
