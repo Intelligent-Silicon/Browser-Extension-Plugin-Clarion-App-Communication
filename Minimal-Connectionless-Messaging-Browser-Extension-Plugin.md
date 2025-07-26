@@ -284,7 +284,7 @@ The manifest file provides additional information controlling how the ```ClaAppN
 
 Whilst the clarion application manifest file can be located anywhere on the device, two registry options exist: 
  
-| Browser | Registry Hive | Registry Setting | User access |
+| Browser | Registry Hive | Registry Setting Add Command | User Access |
 | --- | --- | --- | --- |
 | Firefox | HKLM | REG ADD "HKLM\Software\Mozilla\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f | All Users |
 | Firefox | HKCU | REG ADD "HKCU\Software\Mozilla\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f | Current logged in user |
@@ -295,19 +295,8 @@ Whilst the clarion application manifest file can be located anywhere on the devi
 
 HKLM for all users or in HKCU for currently logged in user. 
 
-Firefox
-```
-PS C:\WINDOWS\system32> REG ADD "HKCU\Software\Mozilla\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f
-```
-Chrome
-```
-PS C:\WINDOWS\system32> REG ADD "HKCU\Software\Google\Chrome\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f
-```
+The Browsers will scan their respective registry key's ```Firefox [HKLM|HKCU]\Software\Mozilla\NativeMessagingHosts```, ```Chrome [HKLM|HKCU]\Software\Google\Chrome\NativeMessagingHosts``` and ```Edge [HKLM|HKCU]\Software\Microsoft\Edge\NativeMessagingHosts``` looking for the Clarion app manifest file and link the ```ClaAppName.manifest allowed_extension``` to the ```manifest.json applications or browser_specific_setting``` entries.
 
-Edge
-```
-PS C:\WINDOWS\system32> REG ADD "HKCU\Software\Mozilla\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f
-```
 
 
 ### Firefox Temporary Extension
