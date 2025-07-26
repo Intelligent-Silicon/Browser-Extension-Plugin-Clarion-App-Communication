@@ -63,7 +63,10 @@ Additional Required Information for a Clarion app to use NativeCommunication aka
 | Firefox Only [browser_specific_settings](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/browser_specific_settings) | guid:{0339088b-ba1a-44dd-baee-da8de84e222d} or name@domainname | must either match the pattern ```/^\{[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\}$/i``` or ```/^[a-z0-9-._]*@[a-z0-9-._]+$/i```. |
 | Firefox Only [applications](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/browser_specific_settings) | guid:{0339088b-ba1a-44dd-baee-da8de84e222d} or name@domainname | "applications" is now deprecated and replaced by "browser_specific_settings" shown above. |
 
-[Complete Firefox manifest.json file for download](Firefox/manifest.json)
+[Complete Firefox manifest.json using application name@domain file for download](connectionless-messaging/Firefox/manifest.json/applications/name/manifest.json)
+[Complete Firefox manifest.json using application {guid} file for download](connectionless-messaging/Firefox/manifest.json/applications/guid/manifest.json)
+[Complete Firefox manifest.json using browser_specific_settings name@domain file for download](connectionless-messaging/Firefox/manifest.json/browser_specific_settings/name/manifest.json)
+[Complete Firefox manifest.json using browser_specific_settings {guid} file for download](connectionless-messaging/Firefox/manifest.json/browser_specific_settings/guid/manifest.json)
 
 ### background.js
 A [Background Script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts) lets you monitor and respond to events in the context of the Browser using the Web Extension API's like navigating to a web page, modifying a bookmark or opening a new tab. It requires permissions to be set in the ```manifest.json``` file to access Browser events.
@@ -158,7 +161,7 @@ browser.webNavigation.onBeforeNavigate.addListener((details) =>
 );
 ```
 
-[Complete Firefox Background.js file for download](Firefox/background.js)
+[Complete Firefox Background.js file for download](connectionless-messaging/Firefox/background.js/background.js)
 
 ### content_script.js
 A [content script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#connection-based_messaging) lets you monitor and respond to events in the context of a web page using the Web Extension APIs. Content scripts are similar to website/webpage scripts loaded using the <script> element, but require permissions to be set in the ```manifest.json``` file to access the website/webpage content.
@@ -235,7 +238,7 @@ Avoid creating multiple ```onMessage()``` listeners for the same type of message
 
 So a better way to send messages between background scripts and content scripts is to use [connection-based messaging](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#connection-based_messaging). 
 
-[Complete Firefox content_script.js file for download](Firefox/content_script.js)
+[Complete Firefox content_script.js file for download](connectionless-messaging/Firefox/content_script.js/content_script.js)
 
 
 ### Clarion_AppName.manifest
@@ -253,10 +256,13 @@ The manifest file provides additional information controlling how the ClaAppName
 | [allowed_extensions](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#native_messaging_manifests) | String Array | An array of Browser Extension [add-on ID's](https://extensionworkshop.com/documentation/develop/extensions-and-the-add-on-id/) defined in ```browser_specific_settings``` in the ```manifest.json``` for the Browser Extension Plugin. |
 
 
-[Complete Firefox ClaAppName.manifest file for download using name@domain](Firefox/name/ClaAppName.manifest)
-[Complete Firefox ClaAppName.manifest file for download using {Guid}](Firefox/guid/ClaAppName.manifest)
+[Complete Firefox ClaAppName.manifest file for download using name@domain](connectionless-messaging/Firefox/name/ClaAppName.manifest)
+[Complete Firefox ClaAppName.manifest file for download using {Guid}](connectionless-messaging/Firefox/guid/ClaAppName.manifest)
 
-### Clarion_AppName.exe
+### ClaAppName.exe
+
+[Complete ClaAppName.clw using allocConsole for download](connectionless-messaging/Firefox/ClaAppName.exe/allocConsole/ClaAppName.clw)
+[Complete ClaAppName.clw using Anonymous Pipes for download](connectionless-messaging/Firefox/ClaAppName.exe/pipes/ClaAppName.clw)
 
 ```
 PROGRAM
@@ -506,13 +512,13 @@ Loc:Buffer_Ansi_Read_Size   Long
 
 Add an entry to the Windows Registry which is
 ```
-PS C:\WINDOWS\system32> REG ADD "HKCU\Software\Mozilla\NativeMessagingHosts\claappname" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\claappname.manifest" /f
+PS C:\WINDOWS\system32> REG ADD "HKCU\Software\Mozilla\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f
 ```
 
 
 
 ### Firefox Temporary Extension
-To load the Browser Extension Plugin for testing purposes.
+To load the Browser Extension Plugin for testing and debugging purposes.
 ``` 
 Type 'about:debugging' into Omnibox (address box) -> Click 'This Firefox' -> Click 'Load Temporary Add-on...' -> Navigate to 'C:\MyBrowserExtensionUsingClarion\v1\' and select 'manifest.json'.
 ```
@@ -521,29 +527,20 @@ A slightly quicker way is...
 Type 'about:debugging#/runtime/this-firefox' into Omnibox (address box) -> Click 'Load Temporary Add-on...' -> Navigate to 'C:\MyBrowserExtensionUsingClarion\v1\' and select 'manifest.json'.
 ```
 
-If you end up reading messages into ClaAppName and they are just 4 bytes in size, its a good time to close the Browser and reload it and reload the Browser Extension Plugin because Firefox has become unstable.
-
 This is what the Browser Extension Plugin will look like when its installed into Firefox.
 
+Using ```name@domain``` as the ```manifest.json applications:gecko:id``` which needs to be mirrored in ```ClaAppName.manifest allowed_extensions```.
 ```
 ClaAppName
-Location        C:/MyBrowserExtensionUsingClarion/v1/
-Extension ID    0339088b-ba1a-44dd-baee-da8de84e222d@intelligentsilicon
-Internal UUID   ac5a88ff-7dad-4c1c-88c3-59b96c8f8ce6
-Manifest URL    moz-extension://ac5a88ff-7dad-4c1c-88c3-59b96c8f8ce6/manifest.json
-```
-Using name@domain as the manifest.json applications:gecko:id which needs to be mirrored in claappname.manifest allowed_extensions.
-```
-claappname
 Location        C:/MyBrowserExtensionUsingClarion/v1/
 Extension ID    0339088b-ba1a-44dd-baee-da8de84e222d@intelligentsilicon
 Internal UUID   {GUID}
 Manifest URL    moz-extension://{Internal UUID}/manifest.json
 ```
 
-Using {GUID} as the manifest.json applications:gecko:id which needs to be mirrored in claappname.manifest allowed_extensions.
+Using ```{GUID}``` as the ```manifest.json applications:gecko:id``` which needs to be mirrored in ```ClaAppName.manifest allowed_extensions```.
 ```
-claappname
+ClaAppName
 Location        C:/MyBrowserExtensionUsingClarion/v1/
 Extension ID    {0339088b-ba1a-44dd-baee-da8de84e222d}
 Internal UUID   {GUID}
@@ -553,7 +550,10 @@ Manifest URL    moz-extension://{Internal UUID}/manifest.json
 When you then carryout any function in Firefox, you will see the Clarion messagebox appear showing you the message: 'Glo:CurrentPID = <PID>'. 
 If the message box doesnt appear when you open a new tab or navigate to a webpage, then the ClaAppName app isnt being loaded properly.
 
+The BEP is now ready for testing.
 
+
+If you end up reading messages into ClaAppName and they are just 4 bytes in size, its a good time to close the Browser and reload it and reload the Browser Extension Plugin because Firefox has become unstable.
 ### Clarion Debugger
 
 Use the method below to learn how to step in to the running ClaNameApp app after its been called by the Web Browser via the plugins.
