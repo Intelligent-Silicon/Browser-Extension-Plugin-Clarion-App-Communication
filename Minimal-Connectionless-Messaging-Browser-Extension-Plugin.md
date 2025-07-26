@@ -160,7 +160,7 @@ The ```${...}``` syntax is how expressions are embedded, evaluated and expanded 
 BSV.postMessage()
 ```
 
-```BSV.postMessage``` is a method that safely sends Cross Origin communication between window objects and thus bypasses the CORS (Cross-Origin Resource Sharing) setting which is enforced by browsers to protect users from unauthorized cross-origin requests. 
+```BSV.postMessage``` is a method that safely sends Cross Origin communication between Browser objects and thus bypasses the CORS (Cross-Origin Resource Sharing) setting which is enforced by browsers to protect users from unauthorized cross-origin requests. 
 
 ```
 browser.webNavigation.onBeforeNavigate.addListener((details) => 
