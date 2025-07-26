@@ -73,7 +73,7 @@ Additional Required Information for a Clarion app to use NativeCommunication aka
 [Complete Firefox manifest.json using browser_specific_settings {guid} file for download](connectionless-messaging/Firefox/manifest.json/browser_specific_settings/guid/manifest.json)
 
 ### background.js
-A [Background Script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts) lets you monitor and respond to events in the context of the Browser using the Web Extension API's like navigating to a web page, modifying a bookmark or opening a new tab. It requires permissions to be set in the ```manifest.json``` file to access Browser events.
+A [Background Script](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts) lets you monitor and respond to events in the context of the Browser using the [Firefox](https://extensionworkshop.com/documentation/develop/about-the-webextensions-api/) [Chrome](https://developer.chrome.com/docs/extensions/reference/api) [Edge](https://learn.microsoft.com/en-us/microsoft-edge/extensions/developer-guide/api-support) Web Extension API's like navigating to a web page, modifying a bookmark or opening a new tab. It requires permissions to be set in the ```manifest.json``` file to access Browser events.
 
 ```
 browser.webNavigation
