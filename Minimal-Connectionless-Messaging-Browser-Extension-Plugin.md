@@ -308,7 +308,7 @@ The Browsers will scan their respective registry key's ```Firefox [HKLM|HKCU]\So
 
 
 ### Firefox Temporary Extension
-To load the Browser Extension Plugin for testing and debugging purposes in Firefox.
+To sideload the Browser Extension Plugin for testing and debugging purposes in Firefox.
 ``` 
 Type 'about:debugging' into Omnibox (address box) -> Click 'This Firefox' -> Click 'Load Temporary Add-on...' -> Navigate to 'C:\MyBrowserExtensionUsingClarion\v1\' and select 'manifest.json'.
 ```
@@ -336,28 +336,23 @@ Extension ID    {0339088b-ba1a-44dd-baee-da8de84e222d}
 Internal UUID   {GUID}
 Manifest URL    moz-extension://{Internal UUID}/manifest.json
 ```
+[Firefox link explaining how to sideload a browser extension](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension#installing)
 
 ### Chrome Enable ExtensionManifestV2Availability
 To check if Google Chrome will accept V2 manifest.json Browser Extension Plugins.
-
 ```
 Type 'chrome://policy' into the Omnibox (address box) -> In Chrome Policies search for 'ExtensionManifestV2Availability' -> If its visible it should have Policy Value = 2.
 ```
-
 If its not visible or set to ```2```, run the following command in a Windows Run box, Dos Window or Powershell Window.
-
 ```
 Reg Add "HKLM\SOFTWARE\Policies\Google\Chrome" /v ExtensionManifestV2Availability /t REG_DWORD /d 2 /f
 ``` 
-
 Close and reload Chrome. 
 
 Repeat the first step and you should now see ```ExtensionManifestV2Availability``` visible and set to ```2```.
 
-
 ### Chrome Temporary Extension
-To load the Browser Extension Plugin for testing and debugging purposes in Chrome.
-
+To sideload the Browser Extension Plugin for testing and debugging purposes in Chrome.
 ``` 
 Type 'chrome://extensions' into Omnibox (address box) -> Switch on 'Developer Mode' located in the top right if its not already on -> Click 'Load Unpack' -> Navigate to 'C:\MyBrowserExtensionUsingClarion\v1\' and click 'Select Folder'.
 ```
@@ -386,11 +381,36 @@ Collect errors              On
 Source                      Unpacked extension
                             Loaded from: C:\MyBrowserExtensionUsingClarion\v1
 ```
-
+[Google Chrome link explaining how to sideload a browser extension](https://developer.chrome.com/docs/extensions/how-to/distribute/install-extensions#prereq-crx)
 
 ### Edge Temporary Extension
+To sideload the Browser Extension Plugin for testing and debugging purposes in Chrome.
+```
+Type 'edge://extensions' into Omnibox (address box) -> Switch on 'Developer Mode' located on the left pane if its not already on -> Click 'Load Unpack' -> Navigate to 'C:\MyBrowserExtensionUsingClarion\v1\' and click 'Select Folder'.
+```
+```ClaAppName``` should appear underneath 'Installed Extensions'. 
 
-edge://extensions/
+If there are Errors, the ```Errors``` link will appear. If you click this, Edge will show you all the errors that exist and in which file they exist in.
+
+If you click the ```Details``` button you will see information like that listed below:
+```
+claappname
+Size:                       1.9 MB
+Version:                    1.0
+Description                 Receives WebNavigation Events
+Permissions                 Read your browsing history
+                            Communicate with cooperating native applications
+Site access                 Allow this extension to read and change all your data on websites you visit: On all sites
+Allow in InPrivate          Unticked
+If you select this option, your browser history may still be recorded. Edge can't prevent the extension from saving your browser history, even in InPrivate mode.
+Allow access to file URLs   Ticked
+Collect errors              Ticked
+Source                      Unpacked extension
+Loaded from                 C:\MyBrowserExtensionUsingClarion\v1
+ID                          ikecfikbakkedbemajecjmbadnabofel
+Inspect views               Background page;
+```
+[Microsoft link explaining how to sideload a browser extension](https://learn.microsoft.com/en-us/microsoft-edge/extensions/getting-started/extension-sideloading).
 
 ### Browser Extension Plugin Testing and Debugging
 
