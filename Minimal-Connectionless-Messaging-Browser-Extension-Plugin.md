@@ -339,11 +339,11 @@ edge://extensions/
 
 ### Extension Testing and Debugging
 
-When you carryout any function in the browser, you should see the ClaAppName.exe messagebox appear showing you the message: 'Glo:CurrentPID = \<PID\>'.
+When you carryout any function in the browser, you should see the ClaAppName.exe messagebox appear showing you the message: 'Glo:CurrentPID = \<PID\>'. This is because its being called for every event being trapped.
  
 IF the ClaAppName.exe message box doesnt appear when you open a new tab or navigate to a webpage, then ClaAppName.exe isnt being loaded properly. Time to double check.
 
-The Browser Extension Plugin is now ready for testing.
+The Browser Extension Plugin is now ready for testing...
 
 TIP: To test the background.js script, click the ```about:debugging#/runtime/this-firefox``` ```Inspect``` button, a new window will appear which positions to the console tab, where you can see the ```background.js``` script has loaded and if the code from the beginning of ```background.js``` (seen below) has not been block-commented out ```/*``` ```*/```, will attempt to load ClaAppName.exe and send a message to it. 
 
