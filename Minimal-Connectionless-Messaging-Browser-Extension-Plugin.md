@@ -332,6 +332,51 @@ Manifest URL    moz-extension://{Internal UUID}/manifest.json
 
 
 ### Chrome Temporary Extension
+To load the Browser Extension Plugin for testing and debugging purposes in Firefox.
+
+First we need to check if Google Chrome will accept V2 manifest.json Browser Extension Plugins.
+```
+Type 'chrome://policy' into the Omnibox (address box) -> In Chrome Policies search for 'ExtensionManifestV2Availability'. -> If its visible it should have Policy Value = 2.
+```
+
+If its not visible or set, run the following command in the Windows Run box, Dos Window or Powershell Window.
+
+```
+Reg Add "HKLM\SOFTWARE\Policies\Google\Chrome" /v ExtensionManifestV2Availability /t REG_DWORD /d 2 /f
+``` 
+
+Close and reload Chrome. Repeat the first step and you should now see it visible and set.
+
+
+``` 
+Type 'chrome://extensions' into Omnibox (address box) -> Switch on 'Developer Mode' located in the top right if its not already on -> Click 'Load Unpack' -> Navigate to 'C:\MyBrowserExtensionUsingClarion\v1\' and click 'Select Folder'.
+```
+ClaAppName should appear underneath 'All Extension'. 
+
+If there are Errors, the red text ```Errors``` button will appear. If you click this, Chrome will show you all the errors that exist and in which file they exist in.
+
+If you click the ```Details``` button you will see information like that listed below:
+
+```
+ClaAppName
+Description                 Receives WebNavigation Events
+Version                     1.0
+Size                        1.9 MB
+ID                          ikecfikbakkedbemajecjmbadnabofel
+Inspect views               No active views
+Permissions                 Read your browsing history
+                            Communicate with cooperating native applications
+Site access                 Allow this extension to read and change all your data on websites that you visit: On all sites
+Site settings               Opens in new tab
+Pin to toolbar              Off
+Allow in Incognito          Off
+Warning: Google Chrome cannot prevent extensions from recording your browsing history. To disable this extension in Incognito mode, unselect this option.
+Allow access to file URLs   On
+Collect errors              On
+Source                      Unpacked extension
+                            Loaded from: C:\MyBrowserExtensionUsingClarion\v1
+```
+
 
 ### Edge Temporary Extension
 
