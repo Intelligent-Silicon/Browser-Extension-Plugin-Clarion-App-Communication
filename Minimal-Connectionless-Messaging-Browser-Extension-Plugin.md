@@ -257,7 +257,7 @@ This is whats called a [Firefox App manifest file](https://developer.mozilla.org
 
 It needs to be installed alongside the Clarion app exe and match the name of the exe. eg ```ClaAppName.manifest``` must match ```ClaAppName.exe```.
 
-The manifest file provides additional information controlling how the ClaAppName.exe communicates with the Browser. Without it, and the [Windows Registry setting below](https://github.com/Intelligent-Silicon/Browser-Extension-Plugin-Clarion-App-Communication/blob/main/Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#windows-registry) the Browser can not communicate with the Clarion app.
+The manifest file provides additional information controlling how the ```ClaAppName.exe``` communicates with the Browser. Without it, and the [Windows Registry setting below](https://github.com/Intelligent-Silicon/Browser-Extension-Plugin-Clarion-App-Communication/blob/main/Minimal-Connectionless-Messaging-Browser-Extension-Plugin.md#windows-registry) the Browser can not communicate with the Clarion app.
 
 
 | Element | Value | Description |
