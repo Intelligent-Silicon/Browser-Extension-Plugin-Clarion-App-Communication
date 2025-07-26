@@ -212,7 +212,7 @@ The properties sent from different Methods that send to ```[browser|Chrome].runt
 | frameId | Integer | Sends the message to a specific frame identified by frameId instead of all frames in the tab. Whether the content script is executed in all frames depends on the all_frames setting in the content_scripts section of manifest.json | 
 
 
-Commonly used properties of ```message``` found across other extensions and websites, but not an exhaustive list as any developer can make up their own including [obfuscated properties](https://en.wikipedia.org/wiki/Obfuscation_(software)).
+Commonly used properties of the ```message``` object found across other extensions and websites, but not an exhaustive list as any developer can make up their own including [obfuscated properties](https://en.wikipedia.org/wiki/Obfuscation_(software)).
 
 | Property | Notes |
 | --- | --- |
@@ -222,7 +222,7 @@ Commonly used properties of ```message``` found across other extensions and webs
 | url | URL being referenced or acted upon |
 | content | Arbitrary content passed from sender | 
 
-Javascript example of how ```message``` could be setup, its purely upto the developer.
+Javascript example of how the ```message``` object could be setup, its format is purely up to the developer.
 ```
 // Sender
 browser.runtime.sendMessage({
