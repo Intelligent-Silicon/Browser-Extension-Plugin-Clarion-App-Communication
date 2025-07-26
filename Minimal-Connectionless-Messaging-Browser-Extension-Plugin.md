@@ -282,7 +282,18 @@ The manifest file provides additional information controlling how the ```ClaAppN
 
 ### Windows Registry
 
-Add an entry to the Windows Registry.
+Whilst the clarion application manifest file can be located anywhere on the device, two registry options exist: 
+ 
+| Browser | Registry Hive | Registry Setting | User access |
+| --- | --- | --- | --- |
+| Firefox | HKLM | REG ADD "HKLM\Software\Mozilla\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f | All Users |
+| Firefox | HKCU | REG ADD "HKCU\Software\Mozilla\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f | Current Logged in User |
+| Chrome | HKLM | REG ADD "HKLM\Software\Google\Chrome\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f | All Users |
+| Chrome | HKCU | REG ADD "HKCU\Software\Google\Chrome\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f | Current Logged in User |
+| Edge | HKLM | REG ADD "HKLM\Software\Microsoft\Edge\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f | All Users |
+| Edge | HKCU | REG ADD "HKCU\Software\Microsoft\Edge\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f | Current Logged in User | 
+
+HKLM for all users or in HKCU for currently logged in user. 
 
 Firefox
 ```
@@ -290,7 +301,7 @@ PS C:\WINDOWS\system32> REG ADD "HKCU\Software\Mozilla\NativeMessagingHosts\ClaA
 ```
 Chrome
 ```
-PS C:\WINDOWS\system32> REG ADD "HKCU\Software\Mozilla\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f
+PS C:\WINDOWS\system32> REG ADD "HKCU\Software\Google\Chrome\NativeMessagingHosts\ClaAppName" /ve /t REG_SZ /d "C:\MyBrowserExtensionUsingClarion\v1\ClaAppName.manifest" /f
 ```
 
 Edge
