@@ -157,10 +157,10 @@ const Message = `text ${details.tabID}`
 The ```${...}``` syntax is how expressions are embedded, evaluated and expanded to a value inside a template literal, which is defined using back ticks. This can help provide "debugging" insight and control into the values of variables and properties which can be passed to the [Firefox](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_messaging) [Chrome](https://developer.chrome.com/docs/extensions/develop/concepts/native-messaging) [Edge](https://learn.microsoft.com/en-us/microsoft-edge/extensions/developer-guide/native-messaging) nativeMessaging linked Clarion app, instead of using ```console.log("Text:", variable);``` which displays messages and values in the Webbrowser's F12 console tab, or using the ```alert("Text:" + variable + "more text!");``` popup message box.
 
 ```
-.postMessage()
+BSV.postMessage()
 ```
 
-```postMessage``` is a method that safely sends Cross Origin communication between window objects and thus bypasses the CORS (Cross-Origin Resource Sharing) setting which is enforced by browsers to protect users from unauthorized cross-origin requests. 
+```BSV.postMessage``` is a method that safely sends Cross Origin communication between window objects and thus bypasses the CORS (Cross-Origin Resource Sharing) setting which is enforced by browsers to protect users from unauthorized cross-origin requests. 
 
 ```
 browser.webNavigation.onBeforeNavigate.addListener((details) => 
